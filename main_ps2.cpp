@@ -7,6 +7,10 @@
 #include <dmaKit.h>
 #include <gsToolkit.h>
 
+extern "C" {
+    size_t malloc_usable_size(void* ptr) { return 0; }
+}
+
 // QuickJS Library
 #include "quickjs/quickjs.h"
 #include "quickjs/quickjs-libc.h"
