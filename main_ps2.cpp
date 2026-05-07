@@ -22,6 +22,19 @@ GSFONTM *gsFontM;
 JSContext *ctx;
 JSRuntime *rt;
 
+// Status Tracking
+void print_status(const char* msg, uint64_t color = GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00)) {
+    gsKit_clear(gsGlobal, color);
+    // Draw a small indicator square in the corner to show activity
+    gsKit_prim_sprite(gsGlobal, 10, 10, 30, 30, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00));
+    if (gsFontM) {
+        gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
+    }
+    gsKit_queue_exec(gsGlobal);
+    gsKit_sync_flip(gsGlobal);
+    printf("%s\n", msg);
+}
+
 // Native Binding: __draw(cmdString)
 static JSValue js_native_draw(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv) {
     if (argc < 1) return JS_UNDEFINED;
@@ -96,18 +109,6 @@ char* load_file_from_cd(const char* filepath) {
     string[fsize] = 0;
     
     return string;
-}
-
-void print_status(const char* msg, uint64_t color = GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00)) {
-    gsKit_clear(gsGlobal, color);
-    // Draw a small indicator square in the corner to show activity
-    gsKit_prim_sprite(gsGlobal, 10, 10, 30, 30, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00));
-    if (gsFontM) {
-        gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
-    }
-    gsKit_queue_exec(gsGlobal);
-    gsKit_sync_flip(gsGlobal);
-    printf("%s\n", msg);
 }
 
 static char status_buf[256];
