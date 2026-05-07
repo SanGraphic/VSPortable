@@ -107,10 +107,7 @@ void print_status(const char* msg, uint64_t color = GS_SETREG_RGBAQ(0x00,0x00,0x
 }
 
 int main(int argc, char *argv[]) {
-    // Reset IOP - Modern PS2SDK style
-    SifInitRpc(0);
-    SifIopReset("", 0);
-    while(!SifIopSync());
+    // Basic RPC Init
     SifInitRpc(0);
     SifLoadFileInit();
     
