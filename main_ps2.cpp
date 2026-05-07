@@ -6,6 +6,8 @@
 #include <gsKit.h>
 #include <dmaKit.h>
 #include <gsToolkit.h>
+#include <fileio.h>
+#include <loadfile.h>
 
 extern "C" {
     size_t malloc_usable_size(void* ptr) { return 0; }
@@ -82,7 +84,13 @@ char* load_file_from_cd(const char* filepath) {
 }
 
 int main(int argc, char *argv[]) {
+    // Reset IOP and wait for it to be ready
     SifInitRpc(0);
+    while(!SifIopReset(NULL, 0));
+    while(!SifIopSync());
+    SifInitRpc(0);
+    SifLoadFileInit();
+    fioInit();
 
     // Initialize gsKit
     gsGlobal = gsKit_init_global();
@@ -91,12 +99,24 @@ int main(int argc, char *argv[]) {
     dmaKit_chan_init(DMA_CHANNEL_GIF);
     gsKit_init_screen(gsGlobal);
 
-    printf("[VS-PS2] Hardware initialized. Booting QuickJS Engine...\n");
+    // Initialize Font
+    gsFontM = gsKit_init_fontm();
+    gsKit_fontm_unpack(gsGlobal, gsFontM);
+    gsFontM->Spacing = 0.8f;
+
+    auto print_status = [&](const char* msg) {
+        gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00));
+        gsKit_fontm_print_scaled(gsGlobal, gsFontM, 50, 400, 1, 0.7f, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
+        gsKit_queue_exec(gsGlobal);
+        gsKit_sync_flip(gsGlobal);
+        printf("%s\n", msg);
+    };
+
+    print_status("[VS-PS2] Booting QuickJS Engine...");
 
     // Initialize QuickJS
     rt = JS_NewRuntime();
-    // CRITICAL: Restrict memory usage to 20MB to prevent out-of-memory crashes on 32MB PS2
-    JS_SetMemoryLimit(rt, 20 * 1024 * 1024); 
+    JS_SetMemoryLimit(rt, 24 * 1024 * 1024); // Bump to 24MB
     
     ctx = JS_NewContext(rt);
 
@@ -111,26 +131,29 @@ int main(int argc, char *argv[]) {
     
     JS_FreeValue(ctx, global_obj);
 
-    printf("[VS-PS2] Loading JS Bundles from CD-ROM...\n");
+    // Load JS Bundles
+    print_status("Loading SHIM.JS...");
+    char* shim_code = load_file_from_cd("SHIM.JS");
+    if (shim_code) {
+        JS_Eval(ctx, shim_code, strlen(shim_code), "shim.js", JS_EVAL_TYPE_GLOBAL);
+        free(shim_code);
+    }
 
-    // Load JS shims and bundles
-    // (In production, the shim string would be compiled in or loaded from a file)
-    const char* shim_code = "var window = globalThis; window.setTimeout = function(cb,ms){ cb(); }; /* ...rest of shim... */";
-    JS_Eval(ctx, shim_code, strlen(shim_code), "shim.js", JS_EVAL_TYPE_GLOBAL);
-
+    print_status("Loading VENDORS.JS...");
     char* vendors_code = load_file_from_cd("VENDORS.JS");
     if (vendors_code) {
         JS_Eval(ctx, vendors_code, strlen(vendors_code), "vendors.js", JS_EVAL_TYPE_GLOBAL);
         free(vendors_code);
     }
 
+    print_status("Loading MAIN.JS...");
     char* main_code = load_file_from_cd("MAIN.JS");
     if (main_code) {
         JS_Eval(ctx, main_code, strlen(main_code), "main.js", JS_EVAL_TYPE_GLOBAL);
         free(main_code);
     }
 
-    printf("[VS-PS2] Entering Main Event Loop...\n");
+    print_status("Entering Main Loop...");
 
     // Main Engine Loop
     while (1) {
