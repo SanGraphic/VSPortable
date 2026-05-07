@@ -13,6 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install Build Tools
+        run: |
+          apk add make build-base cdrkit || (apt-get update && apt-get install -y make build-essential genisoimage)
+
       - name: Build PS2 ELF
         run: |
           make -f Makefile.ps2
@@ -24,9 +28,6 @@ jobs:
           cp .webpack/renderer/vendors.bundle.beautified.js dist_ps2/VENDORS.JS
           cp .webpack/renderer/main.bundle.beautified.js dist_ps2/MAIN.JS
           cp SYSTEM.CNF dist_ps2/SYSTEM.CNF
-
-      - name: Install mkisofs
-        run: apk add cdrkit || apt-get update && apt-get install -y genisoimage
 
       - name: Build ISO
         run: genisoimage -o vsport_ps2.iso -R -J -V "VSPORT" dist_ps2/
