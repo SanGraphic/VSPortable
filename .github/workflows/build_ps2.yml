@@ -22,7 +22,7 @@ jobs:
         run: |
           make -f Makefile.ps2
           mkdir -p dist_ps2
-          cp vsport_ps2.elf dist_ps2/VSPORT.ELF
+          cp vsport.elf dist_ps2/VSPORT.ELF
 
       - name: Assemble disc contents
         run: |
