@@ -163,55 +163,38 @@ int main(int argc, char *argv[]) {
 
     print_status("Isolated Test...", GS_SETREG_RGBAQ(0x40, 0x00, 0x40, 0x00, 0x00));
 
-    // Disable bundle loading to test engine stability
-    /*
-    safe_eval("SHIM.JS", "Shim", GS_SETREG_RGBAQ(0x00, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x00, 0x60, 0x00, 0x00, 0x00));
-    safe_eval("VENDORS.JS", "Vendors", GS_SETREG_RGBAQ(0x00, 0x00, 0x40, 0x00, 0x00), GS_SETREG_RGBAQ(0x00, 0x00, 0x60, 0x00, 0x00));
-    safe_eval("MAIN.JS", "Main", GS_SETREG_RGBAQ(0x40, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x60, 0x60, 0x00, 0x00, 0x00));
-    */
-
-    const char* test_script = "console.log('TEST RUNNING'); "
-                              "var x=0; "
-                              "while(1) { "
+    const char* test_script = "var x=0; "
+                              "globalThis.tick = function() { "
                               "  __draw('CLEAR'); "
                               "  __draw('FILL ' + x + ' 200 100 100'); "
                               "  __draw('FLIP'); "
                               "  x = (x + 1) % 500; "
-                              "}";
+                              "};";
     
     JSValue res = JS_Eval(ctx, test_script, strlen(test_script), "test.js", JS_EVAL_TYPE_GLOBAL);
-    if (JS_IsException(res)) {
-        print_status("Test Error", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-    }
     JS_FreeValue(ctx, res);
 
-    print_status("Ready", GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
+    print_status("Running Loop...", GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
 
     // Main Engine Loop
-    int frame_counter = 0;
     while (1) {
         JSContext *ctx1;
         int err;
 
+        // Call JS Tick
+        JSValue global = JS_GetGlobalObject(ctx);
+        JSValue tick_fn = JS_GetPropertyStr(ctx, global, "tick");
+        if (JS_IsFunction(ctx, tick_fn)) {
+            JSValue r = JS_Call(ctx, tick_fn, global, 0, NULL);
+            JS_FreeValue(ctx, r);
+        }
+        JS_FreeValue(ctx, tick_fn);
+        JS_FreeValue(ctx, global);
+
         // Run pending jobs
         for (;;) {
             err = JS_ExecutePendingJob(rt, &ctx1);
-            if (err <= 0) {
-                if (err < 0) {
-                    print_status("EXCEPTION", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-                    while(1);
-                }
-                break;
-            }
-        }
-
-        if (++frame_counter >= 60) {
-            // Heartbeat: Flash Dark Purple to show loop is alive
-            gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x20, 0x00, 0x20, 0x00, 0x00));
-            gsKit_queue_exec(gsGlobal);
-            gsKit_sync_flip(gsGlobal);
-            JS_RunGC(rt);
-            frame_counter = 0;
+            if (err <= 0) break;
         }
     }
 
