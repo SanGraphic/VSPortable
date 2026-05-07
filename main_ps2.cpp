@@ -104,7 +104,9 @@ void print_status(const char* msg, uint64_t color = GS_SETREG_RGBAQ(0x00,0x00,0x
     gsKit_clear(gsGlobal, color);
     // Draw a small indicator square in the corner to show activity
     gsKit_prim_sprite(gsGlobal, 10, 10, 30, 30, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00));
-    gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
+    if (gsFontM) {
+        gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
+    }
     gsKit_queue_exec(gsGlobal);
     gsKit_sync_flip(gsGlobal);
     printf("%s\n", msg);
@@ -130,15 +132,17 @@ int main(int argc, char *argv[]) {
 
     // Initialize Font
     gsFontM = gsKit_init_fontm();
-    gsKit_fontm_unpack(gsFontM);
-    gsFontM->Spacing = 0.8f;
+    if (gsFontM) {
+        gsKit_fontm_unpack(gsFontM);
+        gsFontM->Spacing = 0.8f;
+    }
 
     print_status("[VS-PS2] Engine Start", GS_SETREG_RGBAQ(0x40,0x00,0x00,0x00,0x00));
 
     // Initialize QuickJS
     rt = JS_NewRuntime();
-    JS_SetMemoryLimit(rt, 16 * 1024 * 1024); 
-    JS_SetMaxStackSize(rt, 1024 * 1024); // 1MB stack
+    JS_SetMemoryLimit(rt, 24 * 1024 * 1024); 
+    JS_SetMaxStackSize(rt, 1024 * 1024); 
     
     ctx = JS_NewContext(rt);
 
@@ -214,30 +218,26 @@ int main(int argc, char *argv[]) {
         JSContext *ctx1;
         int err;
 
-        // Run pending jobs (RAF, Timeouts, Promises)
+        // Run pending jobs
         for (;;) {
             err = JS_ExecutePendingJob(rt, &ctx1);
             if (err <= 0) {
                 if (err < 0) {
-                    JSValue exception_val = JS_GetException(ctx1);
-                    print_status("JS Runtime Exception!", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-                    JS_FreeValue(ctx1, exception_val);
+                    print_status("EXCEPTION", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
                     while(1);
                 }
                 break;
             }
         }
 
-        // Periodic GC every 60 "ticks"
         if (++frame_counter >= 60) {
+            // Heartbeat: Flash Dark Purple to show loop is alive
+            gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x20, 0x00, 0x20, 0x00, 0x00));
+            gsKit_queue_exec(gsGlobal);
+            gsKit_sync_flip(gsGlobal);
             JS_RunGC(rt);
             frame_counter = 0;
         }
-
-        // Small hardware sync to prevent CPU/GPU hammering
-        // This also gives the SIF/IOP time to process audio/pad
-        // gsKit_sync_flip is usually enough if RAF is calling it,
-        // but if the game hangs in a JS loop, this helps.
     }
 
     JS_FreeContext(ctx);
