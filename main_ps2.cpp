@@ -29,13 +29,11 @@ static JSValue js_native_draw(JSContext *ctx, JSValueConst this_val, int argc, J
     const char *cmd = JS_ToCString(ctx, argv[0]);
     if (!cmd) return JS_UNDEFINED;
 
-    if (strncmp(cmd, "CLEAR", 5) == 0) {
-        gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x00,0x00,0x00));
     if (strncmp(cmd, "FLIP", 4) == 0) {
         gsKit_queue_exec(gsGlobal);
         gsKit_sync_flip(gsGlobal);
     }
-    else    if (strncmp(cmd, "CLEAR", 5) == 0) {
+    else if (strncmp(cmd, "CLEAR", 5) == 0) {
         gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
         gsKit_queue_exec(gsGlobal);
     }
