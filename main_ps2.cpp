@@ -127,11 +127,12 @@ int main(int argc, char *argv[]) {
     gsKit_fontm_unpack(gsFontM);
     gsFontM->Spacing = 0.8f;
 
-    print_status("[VS-PS2] Engine Start", GS_SETREG_RGBAQ(0x40,0x00,0x00,0x00,0x00)); // Dark Red
+    print_status("[VS-PS2] Engine Start", GS_SETREG_RGBAQ(0x40,0x00,0x00,0x00,0x00));
 
     // Initialize QuickJS
     rt = JS_NewRuntime();
-    JS_SetMemoryLimit(rt, 20 * 1024 * 1024); 
+    JS_SetMemoryLimit(rt, 16 * 1024 * 1024); 
+    JS_SetMaxStackSize(rt, 512 * 1024); // 512KB stack
     
     ctx = JS_NewContext(rt);
 
@@ -151,41 +152,43 @@ int main(int argc, char *argv[]) {
     
     JS_FreeValue(ctx, global_obj);
 
-    // Load JS Bundles
-    print_status("Loading SHIM...", GS_SETREG_RGBAQ(0x00,0x40,0x00,0x00,0x00)); // Dark Green
-    char* shim_code = load_file_from_cd("SHIM.JS");
-    if (shim_code) {
-        JS_Eval(ctx, shim_code, strlen(shim_code), "shim.js", JS_EVAL_TYPE_GLOBAL);
-        free(shim_code);
-    }
+    auto safe_eval = [&](const char* code, const char* name, uint64_t load_color, uint64_t eval_color) {
+        char buf[128];
+        snprintf(buf, sizeof(buf), "Loading %s...", name);
+        print_status(buf, load_color);
 
-    print_status("Loading VENDORS...", GS_SETREG_RGBAQ(0x00,0x00,0x40,0x00,0x00)); // Dark Blue
-    char* vendors_code = load_file_from_cd("VENDORS.JS");
-    if (vendors_code) {
-        JS_Eval(ctx, vendors_code, strlen(vendors_code), "vendors.js", JS_EVAL_TYPE_GLOBAL);
-        free(vendors_code);
-    }
+        char* source = load_file_from_cd(code);
+        if (!source) {
+            snprintf(buf, sizeof(buf), "Error: %s not found", code);
+            print_status(buf, GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
+            while(1);
+        }
 
-    print_status("Loading MAIN...", GS_SETREG_RGBAQ(0x40,0x40,0x00,0x00,0x00)); // Dark Yellow/Olive
-    char* main_code = load_file_from_cd("MAIN.JS");
-    if (main_code) {
-        JSValue res = JS_Eval(ctx, main_code, strlen(main_code), "main.js", JS_EVAL_TYPE_GLOBAL);
+        snprintf(buf, sizeof(buf), "Eval %s...", name);
+        print_status(buf, eval_color);
+        
+        JSValue res = JS_Eval(ctx, source, strlen(source), name, JS_EVAL_TYPE_GLOBAL);
+        free(source);
+
         if (JS_IsException(res)) {
             JSValue exp = JS_GetException(ctx);
             const char* msg = JS_ToCString(ctx, exp);
             char err_buf[512];
-            snprintf(err_buf, sizeof(err_buf), "JS Error: %s", msg ? msg : "unknown");
-            print_status(err_buf);
+            snprintf(err_buf, sizeof(err_buf), "%s Error: %s", name, msg ? msg : "unknown");
+            print_status(err_buf, GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
             JS_FreeCString(ctx, msg);
             JS_FreeValue(ctx, exp);
-            // Wait forever on error
             while(1);
         }
         JS_FreeValue(ctx, res);
-        free(main_code);
-    }
+    };
 
-    print_status("Game Active");
+    // Load JS Bundles
+    safe_eval("SHIM.JS", "Shim", GS_SETREG_RGBAQ(0x00, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x00, 0x60, 0x00, 0x00, 0x00));
+    safe_eval("VENDORS.JS", "Vendors", GS_SETREG_RGBAQ(0x00, 0x00, 0x40, 0x00, 0x00), GS_SETREG_RGBAQ(0x00, 0x00, 0x60, 0x00, 0x00));
+    safe_eval("MAIN.JS", "Main", GS_SETREG_RGBAQ(0x40, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x60, 0x60, 0x00, 0x00, 0x00));
+
+    print_status("Game Active", GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
 
     // Main Engine Loop
     while (1) {
