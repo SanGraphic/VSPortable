@@ -60,19 +60,6 @@ static JSValue js_native_draw(JSContext *ctx, JSValueConst this_val, int argc, J
     return JS_UNDEFINED;
 }
 
-// Pad Globals
-static char padBuf[256] __attribute__((aligned(64)));
-struct padButtonStatus buttons;
-uint32_t paddata;
-uint32_t old_pad = 0;
-
-// Native Binding: __get_pad_state()
-static JSValue js_native_get_pad_state(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv) {
-    padRead(0, 0, &buttons);
-    paddata = 0xffff ^ buttons.btns;
-    return JS_NewInt32(ctx, paddata);
-}
-
 // Native Binding: console.log
 static JSValue js_console_log(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv) {
     for (int i = 0; i < argc; i++) {
@@ -145,14 +132,9 @@ int main(int argc, char *argv[]) {
     
     ctx = JS_NewContext(rt);
 
-    // Initialize Pad
-    padInit(0);
-    padPortOpen(0, 0, padBuf);
-
     // Bind Native Functions
     JSValue global_obj = JS_GetGlobalObject(ctx);
     JS_SetPropertyStr(ctx, global_obj, "__draw", JS_NewCFunction(ctx, js_native_draw, "__draw", 1));
-    JS_SetPropertyStr(ctx, global_obj, "__get_pad_state", JS_NewCFunction(ctx, js_native_get_pad_state, "__get_pad_state", 0));
     
     // Bind console
     JSValue console = JS_NewObject(ctx);
