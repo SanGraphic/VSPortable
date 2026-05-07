@@ -6,7 +6,6 @@ dist_ps2/
 *.tar.xz
 *.tar.gz
 ps2dev/
-.webpack/
 vsport_full.exe
 vsport_game.exe
 vsport_benchmark.exe
