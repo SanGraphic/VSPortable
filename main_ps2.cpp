@@ -77,7 +77,7 @@ static JSValue js_console_log(JSContext *ctx, JSValueConst this_val, int argc, J
 // CD-ROM Asset Loader
 char* load_file_from_cd(const char* filepath) {
     char fullpath[256];
-    snprintf(fullpath, sizeof(fullpath), "cdrom0:\\%s;1", filepath);
+    snprintf(fullpath, sizeof(fullpath), "cdrom0:/%s;1", filepath);
     
     FILE *f = fopen(fullpath, "rb");
     if (!f) {
@@ -96,8 +96,10 @@ char* load_file_from_cd(const char* filepath) {
     return string;
 }
 
-void print_status(const char* msg) {
-    gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00));
+void print_status(const char* msg, uint64_t color = GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00)) {
+    gsKit_clear(gsGlobal, color);
+    // Draw a small indicator square in the corner to show activity
+    gsKit_prim_sprite(gsGlobal, 10, 10, 30, 30, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00));
     gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
     gsKit_queue_exec(gsGlobal);
     gsKit_sync_flip(gsGlobal);
@@ -105,7 +107,10 @@ void print_status(const char* msg) {
 }
 
 int main(int argc, char *argv[]) {
-    // Basic RPC Init
+    // Reset IOP - Modern PS2SDK style
+    SifInitRpc(0);
+    SifIopReset("", 0);
+    while(!SifIopSync());
     SifInitRpc(0);
     SifLoadFileInit();
     
@@ -120,22 +125,22 @@ int main(int argc, char *argv[]) {
     dmaKit_chan_init(DMA_CHANNEL_GIF);
     gsKit_init_screen(gsGlobal);
 
-    // Initialize Pad
-    padInit(0);
-    padPortOpen(0, 0, padBuf);
-
     // Initialize Font
     gsFontM = gsKit_init_fontm();
     gsKit_fontm_unpack(gsFontM);
     gsFontM->Spacing = 0.8f;
 
-    print_status("[VS-PS2] Engine Start");
+    print_status("[VS-PS2] Engine Start", GS_SETREG_RGBAQ(0x40,0x00,0x00,0x00,0x00)); // Dark Red
 
     // Initialize QuickJS
     rt = JS_NewRuntime();
     JS_SetMemoryLimit(rt, 20 * 1024 * 1024); 
     
     ctx = JS_NewContext(rt);
+
+    // Initialize Pad
+    padInit(0);
+    padPortOpen(0, 0, padBuf);
 
     // Bind Native Functions
     JSValue global_obj = JS_GetGlobalObject(ctx);
@@ -150,21 +155,21 @@ int main(int argc, char *argv[]) {
     JS_FreeValue(ctx, global_obj);
 
     // Load JS Bundles
-    print_status("Loading SHIM...");
+    print_status("Loading SHIM...", GS_SETREG_RGBAQ(0x00,0x40,0x00,0x00,0x00)); // Dark Green
     char* shim_code = load_file_from_cd("SHIM.JS");
     if (shim_code) {
         JS_Eval(ctx, shim_code, strlen(shim_code), "shim.js", JS_EVAL_TYPE_GLOBAL);
         free(shim_code);
     }
 
-    print_status("Loading VENDORS...");
+    print_status("Loading VENDORS...", GS_SETREG_RGBAQ(0x00,0x00,0x40,0x00,0x00)); // Dark Blue
     char* vendors_code = load_file_from_cd("VENDORS.JS");
     if (vendors_code) {
         JS_Eval(ctx, vendors_code, strlen(vendors_code), "vendors.js", JS_EVAL_TYPE_GLOBAL);
         free(vendors_code);
     }
 
-    print_status("Loading MAIN...");
+    print_status("Loading MAIN...", GS_SETREG_RGBAQ(0x40,0x40,0x00,0x00,0x00)); // Dark Yellow/Olive
     char* main_code = load_file_from_cd("MAIN.JS");
     if (main_code) {
         JSValue res = JS_Eval(ctx, main_code, strlen(main_code), "main.js", JS_EVAL_TYPE_GLOBAL);
