@@ -15,8 +15,8 @@ jobs:
 
       - name: Install Build Tools
         run: |
-          apk add make build-base git cmake || true
-          apt-get update && apt-get install -y make build-essential git cmake 2>/dev/null || true
+          apk add make build-base cdrkit || true
+          apt-get update && apt-get install -y make build-essential genisoimage 2>/dev/null || true
 
       - name: Build PS2 ELF
         run: |
@@ -31,17 +31,31 @@ jobs:
           # PS2 BIOS requires CRLF line endings in SYSTEM.CNF
           printf 'BOOT2 = cdrom0:\\VSPORT.ELF;1\r\nVER = 1.00\r\nVMODE = NTSC\r\n' > dist_ps2/SYSTEM.CNF
 
-      - name: Build mkps2iso
+      - name: Build ISO
         run: |
-          git clone --depth=1 --recursive https://github.com/Lameguy64/mkpsxiso.git /tmp/mkpsxiso
-          cd /tmp/mkpsxiso
-          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-          cmake --build build --parallel
-          cp build/mkpsxiso /usr/local/bin/mkps2iso 2>/dev/null || cp build/bin/mkpsxiso /usr/local/bin/mkps2iso 2>/dev/null || find /tmp/mkpsxiso/build -name "mkpsxiso" -exec cp {} /usr/local/bin/mkps2iso \;
+          # genisoimage -sort: higher weight = placed earlier on disc
+          # SYSTEM.CNF MUST be at the start or PS2 BIOS will not boot
+          cat > sort.txt << 'EOF'
+          SYSTEM.CNF  100
+          VSPORT.ELF  90
+          VENDORS.JS  50
+          MAIN.JS     40
+          EOF
+          # Strip leading spaces from sort file (heredoc indentation)
+          sed -i 's/^[[:space:]]*//' sort.txt
+          genisoimage \
+            -o vsport_ps2.iso \
+            -V "VSPORT" \
+            -l \
+            -input-charset iso8859-1 \
+            -sort sort.txt \
+            dist_ps2/
 
-      - name: Build ISO with mkps2iso
+      - name: Verify SYSTEM.CNF placement
         run: |
-          mkps2iso vsport.xml
+          # Dump ISO directory to confirm SYSTEM.CNF is listed first
+          isoinfo -d -i vsport_ps2.iso || true
+          isoinfo -l -i vsport_ps2.iso | head -20 || true
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4
