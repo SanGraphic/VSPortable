@@ -31,17 +31,18 @@ static JSValue js_native_draw(JSContext *ctx, JSValueConst this_val, int argc, J
 
     if (strncmp(cmd, "CLEAR", 5) == 0) {
         gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x00,0x00,0x00));
-    } 
-    else if (strncmp(cmd, "FLIP", 4) == 0) {
+    if (strncmp(cmd, "FLIP", 4) == 0) {
         gsKit_queue_exec(gsGlobal);
         gsKit_sync_flip(gsGlobal);
     }
-    // E.g. "FILL x y w h color"
+    else    if (strncmp(cmd, "CLEAR", 5) == 0) {
+        gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
+        gsKit_queue_exec(gsGlobal);
+    }
     else if (strncmp(cmd, "FILL", 4) == 0) {
         float x, y, w, h;
-        // Parse basic geometry (color parsing simplified for PoC)
         sscanf(cmd, "FILL %f %f %f %f", &x, &y, &w, &h);
-        gsKit_prim_sprite(gsGlobal, x, y, x + w, y + h, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00));
+        gsKit_prim_sprite(gsGlobal, x, y, x + w, y + h, 1, GS_SETREG_RGBAQ(0x00, 0xFF, 0x00, 0x80, 0x00));
     }
 
     JS_FreeCString(ctx, cmd);
@@ -66,11 +67,10 @@ static JSValue js_console_log(JSContext *ctx, JSValueConst this_val, int argc, J
     for (int i = 0; i < argc; i++) {
         const char *str = JS_ToCString(ctx, argv[i]);
         if (str) {
-            printf("%s ", str);
+            print_status(str);
             JS_FreeCString(ctx, str);
         }
     }
-    printf("\n");
     return JS_UNDEFINED;
 }
 
@@ -171,13 +171,13 @@ int main(int argc, char *argv[]) {
     safe_eval("MAIN.JS", "Main", GS_SETREG_RGBAQ(0x40, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x60, 0x60, 0x00, 0x00, 0x00));
     */
 
-    const char* test_script = "console.log('START'); "
+    const char* test_script = "console.log('TEST RUNNING'); "
                               "var x=0; "
                               "while(1) { "
                               "  __draw('CLEAR'); "
-                              "  __draw('FILL ' + x + ' 100 50 50'); "
+                              "  __draw('FILL ' + x + ' 200 100 100'); "
                               "  __draw('FLIP'); "
-                              "  x = (x + 2) % 600; "
+                              "  x = (x + 1) % 500; "
                               "}";
     
     JSValue res = JS_Eval(ctx, test_script, strlen(test_script), "test.js", JS_EVAL_TYPE_GLOBAL);
