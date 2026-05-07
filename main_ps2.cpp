@@ -162,53 +162,29 @@ int main(int argc, char *argv[]) {
     
     JS_FreeValue(ctx, global_obj);
 
-    // Stage 1: Shim
-    print_status("Load SHIM...", GS_SETREG_RGBAQ(0x00, 0x40, 0x00, 0x00, 0x00));
-    char* shim_code = load_file_from_cd("SHIM.JS");
-    if (shim_code) {
-        print_status("Eval SHIM...", GS_SETREG_RGBAQ(0x00, 0x60, 0x00, 0x00, 0x00));
-        JSValue res = JS_Eval(ctx, shim_code, strlen(shim_code), "shim.js", JS_EVAL_TYPE_GLOBAL);
-        free(shim_code);
-        if (JS_IsException(res)) {
-            print_status("SHIM Error", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-            while(1);
-        }
-        JS_FreeValue(ctx, res);
-    } else {
-        print_status("SHIM missing!", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-        while(1);
-    }
+    print_status("Isolated Test...", GS_SETREG_RGBAQ(0x40, 0x00, 0x40, 0x00, 0x00));
 
-    // Stage 2: Vendors
-    print_status("Load VENDORS...", GS_SETREG_RGBAQ(0x00, 0x00, 0x40, 0x00, 0x00));
-    char* vendors_code = load_file_from_cd("VENDORS.JS");
-    if (vendors_code) {
-        print_status("Eval VENDORS...", GS_SETREG_RGBAQ(0x00, 0x00, 0x60, 0x00, 0x00));
-        JSValue res = JS_Eval(ctx, vendors_code, strlen(vendors_code), "vendors.js", JS_EVAL_TYPE_GLOBAL);
-        free(vendors_code);
-        if (JS_IsException(res)) {
-            print_status("VENDORS Error", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-            while(1);
-        }
-        JS_FreeValue(ctx, res);
-    } else {
-        print_status("VENDORS missing!", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-        while(1);
-    }
+    // Disable bundle loading to test engine stability
+    /*
+    safe_eval("SHIM.JS", "Shim", GS_SETREG_RGBAQ(0x00, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x00, 0x60, 0x00, 0x00, 0x00));
+    safe_eval("VENDORS.JS", "Vendors", GS_SETREG_RGBAQ(0x00, 0x00, 0x40, 0x00, 0x00), GS_SETREG_RGBAQ(0x00, 0x00, 0x60, 0x00, 0x00));
+    safe_eval("MAIN.JS", "Main", GS_SETREG_RGBAQ(0x40, 0x40, 0x00, 0x00, 0x00), GS_SETREG_RGBAQ(0x60, 0x60, 0x00, 0x00, 0x00));
+    */
 
-    // Stage 3: Main
-    print_status("Load MAIN...", GS_SETREG_RGBAQ(0x40, 0x40, 0x00, 0x00, 0x00));
-    char* main_code = load_file_from_cd("MAIN.JS");
-    if (main_code) {
-        print_status("Eval MAIN...", GS_SETREG_RGBAQ(0x60, 0x60, 0x00, 0x00, 0x00));
-        JSValue res = JS_Eval(ctx, main_code, strlen(main_code), "main.js", JS_EVAL_TYPE_GLOBAL);
-        free(main_code);
-        if (JS_IsException(res)) {
-            print_status("MAIN Error", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
-            while(1);
-        }
-        JS_FreeValue(ctx, res);
+    const char* test_script = "console.log('START'); "
+                              "var x=0; "
+                              "while(1) { "
+                              "  __draw('CLEAR'); "
+                              "  __draw('FILL ' + x + ' 100 50 50'); "
+                              "  __draw('FLIP'); "
+                              "  x = (x + 2) % 600; "
+                              "}";
+    
+    JSValue res = JS_Eval(ctx, test_script, strlen(test_script), "test.js", JS_EVAL_TYPE_GLOBAL);
+    if (JS_IsException(res)) {
+        print_status("Test Error", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
     }
+    JS_FreeValue(ctx, res);
 
     print_status("Ready", GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
 
