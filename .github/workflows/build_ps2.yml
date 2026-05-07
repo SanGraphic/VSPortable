@@ -11,7 +11,7 @@ jobs:
     container: ps2dev/ps2dev:latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Build PS2 ELF
         run: |
@@ -32,7 +32,7 @@ jobs:
         run: genisoimage -o vsport_ps2.iso -R -J -V "VSPORT" dist_ps2/
 
       - name: Upload ISO
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: vsport-ps2-rom
           path: vsport_ps2.iso
