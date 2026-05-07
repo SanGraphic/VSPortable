@@ -33,11 +33,11 @@ jobs:
 
       - name: Build mkps2iso
         run: |
-          git clone --depth=1 https://github.com/Lameguy64/mkpsxiso.git /tmp/mkpsxiso
+          git clone --depth=1 --recursive https://github.com/Lameguy64/mkpsxiso.git /tmp/mkpsxiso
           cd /tmp/mkpsxiso
           cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
           cmake --build build --parallel
-          cp build/mkpsxiso /usr/local/bin/mkps2iso || cp build/bin/mkpsxiso /usr/local/bin/mkps2iso
+          cp build/mkpsxiso /usr/local/bin/mkps2iso 2>/dev/null || cp build/bin/mkpsxiso /usr/local/bin/mkps2iso 2>/dev/null || find /tmp/mkpsxiso/build -name "mkpsxiso" -exec cp {} /usr/local/bin/mkps2iso \;
 
       - name: Build ISO with mkps2iso
         run: |
