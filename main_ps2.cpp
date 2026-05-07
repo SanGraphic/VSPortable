@@ -82,6 +82,14 @@ char* load_file_from_cd(const char* filepath) {
     return string;
 }
 
+void print_status(const char* msg) {
+    gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00));
+    gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
+    gsKit_queue_exec(gsGlobal);
+    gsKit_sync_flip(gsGlobal);
+    printf("%s\n", msg);
+}
+
 int main(int argc, char *argv[]) {
     // Basic RPC Init
     SifInitRpc(0);
@@ -99,19 +107,11 @@ int main(int argc, char *argv[]) {
     gsKit_fontm_unpack(gsFontM);
     gsFontM->Spacing = 0.8f;
 
-    auto print_status = [&](const char* msg) {
-        gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00));
-        gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
-        gsKit_queue_exec(gsGlobal);
-        gsKit_sync_flip(gsGlobal);
-        printf("%s\n", msg);
-    };
-
-    print_status("[VS-PS2] Booting QuickJS Engine...");
+    print_status("[VS-PS2] Engine Start");
 
     // Initialize QuickJS
     rt = JS_NewRuntime();
-    JS_SetMemoryLimit(rt, 24 * 1024 * 1024); // Bump to 24MB
+    JS_SetMemoryLimit(rt, 20 * 1024 * 1024); 
     
     ctx = JS_NewContext(rt);
 
@@ -127,54 +127,64 @@ int main(int argc, char *argv[]) {
     JS_FreeValue(ctx, global_obj);
 
     // Load JS Bundles
-    print_status("Loading SHIM.JS...");
+    print_status("Loading SHIM...");
     char* shim_code = load_file_from_cd("SHIM.JS");
     if (shim_code) {
         JS_Eval(ctx, shim_code, strlen(shim_code), "shim.js", JS_EVAL_TYPE_GLOBAL);
         free(shim_code);
     }
 
-    print_status("Loading VENDORS.JS...");
+    print_status("Loading VENDORS...");
     char* vendors_code = load_file_from_cd("VENDORS.JS");
     if (vendors_code) {
         JS_Eval(ctx, vendors_code, strlen(vendors_code), "vendors.js", JS_EVAL_TYPE_GLOBAL);
         free(vendors_code);
     }
 
-    print_status("Loading MAIN.JS...");
+    print_status("Loading MAIN...");
     char* main_code = load_file_from_cd("MAIN.JS");
     if (main_code) {
-        JS_Eval(ctx, main_code, strlen(main_code), "main.js", JS_EVAL_TYPE_GLOBAL);
+        JSValue res = JS_Eval(ctx, main_code, strlen(main_code), "main.js", JS_EVAL_TYPE_GLOBAL);
+        if (JS_IsException(res)) {
+            JSValue exp = JS_GetException(ctx);
+            const char* msg = JS_ToCString(ctx, exp);
+            char err_buf[512];
+            snprintf(err_buf, sizeof(err_buf), "JS Error: %s", msg ? msg : "unknown");
+            print_status(err_buf);
+            JS_FreeCString(ctx, msg);
+            JS_FreeValue(ctx, exp);
+            // Wait forever on error
+            while(1);
+        }
+        JS_FreeValue(ctx, res);
         free(main_code);
     }
 
-    print_status("Entering Main Loop...");
+    print_status("Game Active");
 
     // Main Engine Loop
     while (1) {
         JSContext *ctx1;
         int err;
 
-        // Execute pending Promise/job callbacks
         for (;;) {
             err = JS_ExecutePendingJob(rt, &ctx1);
             if (err <= 0) {
                 if (err < 0) {
-                    // Dump JS Error
                     JSValue exception_val = JS_GetException(ctx1);
                     const char *str = JS_ToCString(ctx1, exception_val);
                     if (str) {
-                        printf("[JS ERROR] %s\n", str);
+                        char err_buf[512];
+                        snprintf(err_buf, sizeof(err_buf), "Exception: %s", str);
+                        print_status(err_buf);
                         JS_FreeCString(ctx1, str);
                     }
                     JS_FreeValue(ctx1, exception_val);
+                    while(1);
                 }
                 break;
             }
         }
-        
-        // Let gsKit flip if we didn't receive a FLIP command natively
-        // Normally handled by requestAnimationFrame firing `__draw('FLIP')`
     }
 
     JS_FreeContext(ctx);

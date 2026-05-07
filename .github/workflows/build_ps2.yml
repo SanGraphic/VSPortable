@@ -27,8 +27,8 @@ jobs:
       - name: Assemble disc contents
         run: |
           cp v_quickjs_clean.js dist_ps2/SHIM.JS
-          cp .webpack/renderer/vendors.bundle.beautified.js dist_ps2/VENDORS.JS
-          cp .webpack/renderer/main.bundle.beautified.js dist_ps2/MAIN.JS
+          cp .webpack/renderer/vendors.bundle.js dist_ps2/VENDORS.JS
+          cp .webpack/renderer/main.bundle.obfuscated.js dist_ps2/MAIN.JS
           # Create a dummy padding file (20MB) to satisfy some PS2 drivers
           dd if=/dev/zero of=dist_ps2/DUMMY.DAT bs=1M count=20
           # PS2 BIOS requires CRLF line endings in SYSTEM.CNF
