@@ -1,0 +1,185 @@
+// Module 0x13f
+// Args: _0x28fe54, _0x3b2914, _0x332c0e
+
+export default (_0x28fe54, _0x3b2914, _0x332c0e) => {
+                'use strict';
+                const _0x205932 = a0_0x6932;
+                var _0x217f57 = this && this['__createBinding'] || (Object['create'] ? function(_0x3ca61a, _0x433545, _0x2d0f77, _0x51c1f8) {
+                        const _0x379d81 = _0x205932;
+                        void 0x0 === _0x51c1f8 && (_0x51c1f8 = _0x2d0f77);
+                        var _0x36a2f6 = Object['getOwnPropertyDescriptor'](_0x433545, _0x2d0f77);
+                        _0x36a2f6 && !('get' in _0x36a2f6 ? !_0x433545['__esModule'] : _0x36a2f6[_0x379d81(0x11bf)] || _0x36a2f6['configurable']) || (_0x36a2f6 = {
+                            'enumerable': !0x0,
+                            'get': function() {
+                                return _0x433545[_0x2d0f77];
+                            }
+                        }), Object[_0x379d81(0x811)](_0x3ca61a, _0x51c1f8, _0x36a2f6);
+                    } : function(_0x4740f6, _0x2f5c8b, _0x46e647, _0x197476) {
+                        void 0x0 === _0x197476 && (_0x197476 = _0x46e647), _0x4740f6[_0x197476] = _0x2f5c8b[_0x46e647];
+                    }),
+                    _0x4309ee = this && this['__setModuleDefault'] || (Object['create'] ? function(_0x626bd7, _0x481b02) {
+                        Object['defineProperty'](_0x626bd7, 'default', {
+                            'enumerable': !0x0,
+                            'value': _0x481b02
+                        });
+                    } : function(_0x49650a, _0xb99d05) {
+                        _0x49650a['default'] = _0xb99d05;
+                    }),
+                    _0x217e24 = this && this['__importStar'] || function(_0x1528f7) {
+                        const _0x338314 = _0x205932;
+                        if (_0x1528f7 && _0x1528f7['__esModule']) return _0x1528f7;
+                        var _0x2e31d6 = {};
+                        if (null != _0x1528f7) {
+                            for (var _0x222c12 in _0x1528f7) 'default' !== _0x222c12 && Object[_0x338314(0x977)][_0x338314(0x2cf)][_0x338314(0xff0)](_0x1528f7, _0x222c12) && _0x217f57(_0x2e31d6, _0x1528f7, _0x222c12);
+                        }
+                        return _0x4309ee(_0x2e31d6, _0x1528f7), _0x2e31d6;
+                    },
+                    _0x38351d = this && this['__importDefault'] || function(_0x442875) {
+                        const _0x5f4b69 = _0x205932;
+                        return _0x442875 && _0x442875[_0x5f4b69(0x16f1)] ? _0x442875 : {
+                            'default': _0x442875
+                        };
+                    };
+                Object['defineProperty'](_0x3b2914, '__esModule', {
+                    'value': !0x0
+                });
+                const _0x5e0eaa = _0x332c0e(0x16c14),
+                    _0x577344 = _0x38351d(_0x332c0e(0xccae)),
+                    _0x5bc320 = _0x217e24(_0x332c0e(0x5f07)),
+                    _0x108071 = _0x38351d(_0x332c0e(0x169b4)),
+                    _0x4fedb5 = _0x38351d(_0x332c0e(0x5103)),
+                    _0x2976a7 = _0x38351d(_0x332c0e(0x15dd));
+                class _0x2cec5b extends Phaser['Scene'] {
+                    constructor() {
+                        const _0x3c07c1 = _0x205932;
+                        super({
+                            'key': _0x108071['default'][_0x3c07c1(0x792)]
+                        });
+                    } ['preload']() {} ['create']() {
+                        const _0x469d2f = _0x205932;
+                        let _0x562b04 = this[_0x469d2f(0x18bd)][_0x469d2f(0x568)](0.5 * this['renderer']['width'], 0.5 * this[_0x469d2f(0x12f9)][_0x469d2f(0x140e)], 'introBG');
+                        var _0x2f15c3 = Math[_0x469d2f(0x1084)](_0x562b04['displayWidth'], _0x562b04[_0x469d2f(0x828)]);
+                        let _0x29bb5c = _0x5bc320[_0x469d2f(0xf04)] ? this['renderer']['height'] / _0x2f15c3 : this['renderer'][_0x469d2f(0x173c)] / _0x2f15c3;
+                        _0x562b04['setScale'](_0x29bb5c, _0x29bb5c)['setAlpha'](0x0), this['tweens'][_0x469d2f(0x18bd)]({
+                            'targets': _0x562b04,
+                            'alpha': 0x1,
+                            'duration': 0x1f4
+                        });
+                        var _0x376627 = _0x5bc320[_0x469d2f(0x1e0)][_0x469d2f(0x173c)] * _0x4fedb5['default']['RPixelScale'];
+                        _0x5bc320['SAFEAREA'][_0x469d2f(0x140e)], _0x4fedb5[_0x469d2f(0xd2c)][_0x469d2f(0xb53)], _0x4fedb5['default']['PixelScale'];
+                        let _0x44ed13 = 0xc0,
+                            _0x368849 = new Phaser[(_0x469d2f(0x10d2))][(_0x469d2f(0x16b))](_0x5bc320[_0x469d2f(0x1e0)][_0x469d2f(0x1634)], 0x40),
+                            _0x287a49 = _0x368849['y'] + _0x44ed13 + 0x80,
+                            _0x542abf = new Phaser[(_0x469d2f(0x10d2))]['Point'](_0x368849['x'] - 0xc0, _0x368849['y'] + 0x20 + 0x20),
+                            _0x47176d = new Phaser[(_0x469d2f(0x10d2))][(_0x469d2f(0x16b))](_0x368849['x'] - 0x80, _0x368849['y'] + 0x20 + 0x10),
+                            _0x1bc39e = new Phaser['Geom'][(_0x469d2f(0x16b))](_0x368849['x'] + 0x40, _0x368849['y'] + 0x20 + 0x10),
+                            _0x49eed1 = _0x368849['y'] + _0x44ed13 + 0x40 + 0x20,
+                            _0x35f20b = _0x368849['x'] - 0x80,
+                            _0x408ad2 = _0x368849['x'] + 0x80;
+                        this[_0x469d2f(0x431)] = new _0x5e0eaa['NineSlice'](this, _0x577344[_0x469d2f(0xd2c)][_0x469d2f(0x1537)], {
+                            'x': 0x0,
+                            'y': 0x0,
+                            'width': 0x200,
+                            'height': _0x44ed13
+                        }), this[_0x469d2f(0x431)]['setPosition'](_0x368849['x'], _0x368849['y']), this['background']['setOrigin'](0.5, 0x0), this[_0x469d2f(0x18bd)][_0x469d2f(0x1a88)](this['background']), this[_0x469d2f(0x431)]['setInteractive'](), this[_0x469d2f(0x1752)] = this['add'][_0x469d2f(0x758)](_0x368849['x'], _0x368849['y'] + 0x20, 'Current Save', {})[_0x469d2f(0x8a2)](0x2)[_0x469d2f(0xf8e)](0.5), _0x5bc320['default']['Lang']['scaleToMaxFast'](this[_0x469d2f(0x1752)], !0x1, 0x200);
+                        let _0x7a19cf = _0x2976a7[_0x469d2f(0xd2c)][_0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1043)]['PlayerOptions'][_0x469d2f(0x1188)]][0x0];
+                        this[_0x469d2f(0x18bd)][_0x469d2f(0x568)](_0x542abf['x'], _0x542abf['y'], _0x7a19cf[_0x469d2f(0xacb)], _0x7a19cf['spriteName'])[_0x469d2f(0xf8e)](0.5, 0x0)[_0x469d2f(0x8a2)](0x2);
+                        let _0x574d7c = 0x0;
+                        _0x5bc320['default'][_0x469d2f(0x1043)][_0x469d2f(0x14d8)][_0x469d2f(0x3fd)] && _0x5bc320[_0x469d2f(0xd2c)]['Core'][_0x469d2f(0x14d8)][_0x469d2f(0x3fd)][_0x469d2f(0x532)] && (_0x574d7c = _0x5bc320['default'][_0x469d2f(0x1043)]['PlayerOptions']['EggData'][_0x469d2f(0x532)]), this[_0x469d2f(0xc38)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x47176d['y'] + 0x10, 'Gold Earned: '), this['lifetimeSurvived'] = this[_0x469d2f(0x18bd)]['text'](_0x47176d['x'], _0x47176d['y'] + 0x20, 'Minutes Survived: '), this['itemInCollection'] = this[_0x469d2f(0x18bd)]['text'](_0x47176d['x'], _0x47176d['y'] + 0x40, 'Collection: '), this['itemInUnlocks'] = this['add']['text'](_0x47176d['x'], _0x47176d['y'] + 0x50, 'Unlocks: '), this[_0x469d2f(0x16e7)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x47176d['y'] + 0x60, 'Secrets: '), this['goldenEggs'] = this['add'][_0x469d2f(0x758)](_0x47176d['x'], _0x47176d['y'] + 0x70, 'Golden Eggs: '), this[_0x469d2f(0x10d4)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x1bc39e['y'] + 0x10, Math[_0x469d2f(0xe07)](_0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1043)][_0x469d2f(0x14d8)][_0x469d2f(0x1089)])[_0x469d2f(0xcc6)]()), this[_0x469d2f(0x445)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x1bc39e['y'] + 0x20, Math[_0x469d2f(0xe07)](_0x5bc320['default'][_0x469d2f(0x1043)][_0x469d2f(0x14d8)][_0x469d2f(0x83d)])[_0x469d2f(0xcc6)]()), this[_0x469d2f(0x1005)] = this['add']['text'](_0x1bc39e['x'], _0x1bc39e['y'] + 0x40, Math['floor'](_0x5bc320['default']['Core']['PlayerOptions'][_0x469d2f(0x9fa)])[_0x469d2f(0xcc6)]()), this['value_itemInUnlocks'] = this[_0x469d2f(0x18bd)]['text'](_0x1bc39e['x'], _0x1bc39e['y'] + 0x50, Math[_0x469d2f(0xe07)](_0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1043)]['PlayerOptions'][_0x469d2f(0xd26)])[_0x469d2f(0xcc6)]()), this['value_itemInSecrets'] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x1bc39e['y'] + 0x60, Math[_0x469d2f(0xe07)](_0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1043)][_0x469d2f(0x14d8)]['itemInSecrets'])[_0x469d2f(0xcc6)]()), this[_0x469d2f(0x5d7)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x1bc39e['y'] + 0x70, Math['floor'](_0x574d7c)['toString']()), this['stashBG'] = new _0x5e0eaa[(_0x469d2f(0x1a31))](this, _0x577344[_0x469d2f(0xd2c)]['MenuBackground'], {
+                            'x': 0x0,
+                            'y': 0x0,
+                            'width': _0x376627,
+                            'height': _0x44ed13
+                        }), this['stashBG']['setPosition'](_0x368849['x'], _0x368849['y'] + _0x287a49), this[_0x469d2f(0x7ac)]['setOrigin'](0.5, 0x0), this['add']['existing'](this[_0x469d2f(0x7ac)]), this['stashBG']['setInteractive'](), this[_0x469d2f(0x5bd)] = this[_0x469d2f(0x18bd)]['text'](_0x368849['x'], _0x368849['y'] + 0x20 + _0x287a49, 'Data Stash', {})['setScale'](0x2)[_0x469d2f(0xf8e)](0.5), _0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1f1)][_0x469d2f(0x14a8)](this[_0x469d2f(0x5bd)], !0x1, 0x200);
+                        let _0x3390c3 = _0x2976a7[_0x469d2f(0xd2c)][_0x5bc320['default'][_0x469d2f(0x1043)][_0x469d2f(0x14d8)][_0x469d2f(0x1188)]][0x0];
+                        this['add']['image'](_0x542abf['x'], _0x542abf['y'] + _0x287a49, _0x3390c3[_0x469d2f(0xacb)], _0x3390c3['spriteName'])['setOrigin'](0.5, 0x0)['setScale'](0x2);
+                        let _0x52a042 = 0x0;
+                        _0x5bc320[_0x469d2f(0xd2c)]['Core'][_0x469d2f(0x14d8)]['EggData'] && _0x5bc320[_0x469d2f(0xd2c)]['Core']['PlayerOptions']['EggData'][_0x469d2f(0x532)] && (_0x52a042 = _0x5bc320['default'][_0x469d2f(0x1043)][_0x469d2f(0x14d8)]['EggData']['total']), this[_0x469d2f(0x767)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x287a49 + _0x47176d['y'] + 0x10, 'Gold Earned: '), this['s_lifetimeSurvived'] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x287a49 + _0x47176d['y'] + 0x20, 'Minutes Survived: '), this[_0x469d2f(0x763)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x287a49 + _0x47176d['y'] + 0x40, 'Collection: '), this[_0x469d2f(0x1525)] = this['add'][_0x469d2f(0x758)](_0x47176d['x'], _0x287a49 + _0x47176d['y'] + 0x50, 'Unlocks: '), this['s_itemInSecrets'] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x287a49 + _0x47176d['y'] + 0x60, 'Secrets: '), this['s_goldenEggs'] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x47176d['x'], _0x287a49 + _0x47176d['y'] + 0x70, 'Golden Eggs: '), this[_0x469d2f(0x98a)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x287a49 + _0x1bc39e['y'] + 0x10, Math[_0x469d2f(0xe07)](_0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1043)][_0x469d2f(0x14d8)][_0x469d2f(0x1089)])[_0x469d2f(0xcc6)]()), this[_0x469d2f(0xb5e)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x287a49 + _0x1bc39e['y'] + 0x20, Math[_0x469d2f(0xe07)](_0x5bc320['default']['Core'][_0x469d2f(0x14d8)]['LifetimeSurvived'])[_0x469d2f(0xcc6)]()), this[_0x469d2f(0x3db)] = this[_0x469d2f(0x18bd)]['text'](_0x1bc39e['x'], _0x287a49 + _0x1bc39e['y'] + 0x40, Math[_0x469d2f(0xe07)](_0x5bc320[_0x469d2f(0xd2c)]['Core'][_0x469d2f(0x14d8)][_0x469d2f(0x9fa)])['toString']()), this['s_value_itemInUnlocks'] = this['add']['text'](_0x1bc39e['x'], _0x287a49 + _0x1bc39e['y'] + 0x50, Math[_0x469d2f(0xe07)](_0x5bc320['default']['Core']['PlayerOptions']['itemInUnlocks'])['toString']()), this[_0x469d2f(0x731)] = this[_0x469d2f(0x18bd)]['text'](_0x1bc39e['x'], _0x287a49 + _0x1bc39e['y'] + 0x60, Math[_0x469d2f(0xe07)](_0x5bc320['default'][_0x469d2f(0x1043)][_0x469d2f(0x14d8)]['itemInSecrets'])[_0x469d2f(0xcc6)]()), this['s_value_goldenEggs'] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](_0x1bc39e['x'], _0x287a49 + _0x1bc39e['y'] + 0x70, Math['floor'](_0x52a042)[_0x469d2f(0xcc6)]()), this[_0x469d2f(0x15c3)] = new _0x5e0eaa[(_0x469d2f(0x1a31))](this, _0x577344['default'][_0x469d2f(0x1775)], {
+                            'x': _0x35f20b,
+                            'y': _0x49eed1,
+                            'width': 0x64,
+                            'height': 0x20
+                        })['setScale'](0x2 * _0x4fedb5['default'][_0x469d2f(0x15db)])[_0x469d2f(0xf8e)](0.5), this['add']['existing'](this[_0x469d2f(0x15c3)]), this[_0x469d2f(0x1716)] = this['add'][_0x469d2f(0x758)](this[_0x469d2f(0x15c3)]['x'], this[_0x469d2f(0x15c3)]['y'], 'ADD TO STASH', {
+                            'align': 'center'
+                        })[_0x469d2f(0xf8e)](0.5), this['RestoreStashButton'] = new _0x5e0eaa['NineSlice'](this, _0x577344['default'][_0x469d2f(0x1775)], {
+                            'x': _0x408ad2,
+                            'y': _0x49eed1,
+                            'width': 0x64,
+                            'height': 0x20
+                        })['setScale'](0x2 * _0x4fedb5[_0x469d2f(0xd2c)]['PixelScale'])[_0x469d2f(0xf8e)](0.5), this['add'][_0x469d2f(0x1a88)](this[_0x469d2f(0x413)]), this['RestoreStashText'] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](this[_0x469d2f(0x413)]['x'], this['RestoreStashButton']['y'], 'RESTORE AND MERGE', {
+                            'align': 'center'
+                        })['setOrigin'](0.5), this[_0x469d2f(0x18bd)][_0x469d2f(0x568)](_0x35f20b, _0x49eed1 - 0x40, 'UI', 'arrow_01.png')['setScale'](0x4)[_0x469d2f(0x9b5)](0x5a), this[_0x469d2f(0x18bd)]['image'](_0x35f20b, _0x49eed1 + 0x40, 'UI', 'arrow_01.png')[_0x469d2f(0x8a2)](0x4)[_0x469d2f(0x9b5)](0x5a), this['add'][_0x469d2f(0x568)](_0x408ad2, _0x49eed1 - 0x40, 'UI', 'arrow_01.png')[_0x469d2f(0x8a2)](0x4)[_0x469d2f(0x9b5)](-0x5a), this['add'][_0x469d2f(0x568)](_0x408ad2, _0x49eed1 + 0x40, 'UI', 'arrow_01.png')[_0x469d2f(0x8a2)](0x4)[_0x469d2f(0x9b5)](-0x5a);
+                        let _0x3d6b8b = new Phaser[(_0x469d2f(0x10d2))][(_0x469d2f(0x16b))](0.5 * this['renderer']['width'], 0.5 * this[_0x469d2f(0x12f9)]['height']),
+                            _0x362e87 = _0x3d6b8b['y'] + 89.6 - 0x10;
+                        this['blackFader'] = this['add'][_0x469d2f(0x568)](0.5 * this['renderer']['width'], 0.5 * this[_0x469d2f(0x12f9)][_0x469d2f(0x140e)], 'UI', 'blackDot.png')[_0x469d2f(0x8a2)](1.1 * this[_0x469d2f(0x12f9)]['width'], 1.1 * this[_0x469d2f(0x12f9)]['height'])[_0x469d2f(0xdab)](0.3)['setVisible'](!0x1), this[_0x469d2f(0x163)] = new _0x5e0eaa[(_0x469d2f(0x1a31))](this, _0x577344['default'][_0x469d2f(0x1537)], {
+                            'x': 0x0,
+                            'y': 0x0,
+                            'width': 0x300,
+                            'height': 0x100
+                        }), this[_0x469d2f(0x163)]['setPosition'](_0x3d6b8b['x'], _0x3d6b8b['y']), this['popuBG']['setOrigin'](0.5, 0.5)[_0x469d2f(0x183f)](!0x1), this['add'][_0x469d2f(0x1a88)](this['popuBG']), this[_0x469d2f(0x167a)] = this['add'][_0x469d2f(0x758)](this[_0x469d2f(0x163)]['x'], this[_0x469d2f(0x163)]['y'] - 102.4, 'Attention!', {})[_0x469d2f(0x8a2)](0x2)[_0x469d2f(0xf8e)](0.5)[_0x469d2f(0x183f)](!0x1), _0x5bc320[_0x469d2f(0xd2c)][_0x469d2f(0x1f1)]['scaleToMaxFast'](this[_0x469d2f(0x167a)], !0x1, 0x300 * 0.95), this[_0x469d2f(0x20b)] = new _0x5e0eaa[(_0x469d2f(0x1a31))](this, _0x577344[_0x469d2f(0xd2c)][_0x469d2f(0x1775)], {
+                            'x': _0x3d6b8b['x'] + 0x100,
+                            'y': _0x362e87,
+                            'width': 0x64,
+                            'height': 0x20
+                        })[_0x469d2f(0x8a2)](0x2)[_0x469d2f(0xf8e)](0.5)[_0x469d2f(0x183f)](!0x1), this[_0x469d2f(0x18bd)][_0x469d2f(0x1a88)](this[_0x469d2f(0x20b)]), this[_0x469d2f(0x14fd)] = this[_0x469d2f(0x18bd)][_0x469d2f(0x758)](this[_0x469d2f(0x20b)]['x'], this[_0x469d2f(0x20b)]['y'], 'OK', {
+                            'align': 'center'
+                        })[_0x469d2f(0xf8e)](0.5)[_0x469d2f(0x8a2)](0x2)['setVisible'](!0x1), this[_0x469d2f(0x98e)] = new _0x5e0eaa[(_0x469d2f(0x1a31))](this, _0x577344['default'][_0x469d2f(0x146f)], {
+                            'x': _0x3d6b8b['x'] - 0x100,
+                            'y': _0x362e87,
+                            'width': 0x64,
+                            'height': 0x20
+                        })[_0x469d2f(0x8a2)](0x2)[_0x469d2f(0xf8e)](0.5)['setVisible'](!0x1), this[_0x469d2f(0x18bd)][_0x469d2f(0x1a88)](this[_0x469d2f(0x98e)]), this['popuCancelText'] = this['add']['text'](this['popuCancelButton']['x'], this[_0x469d2f(0x98e)]['y'], 'CANCEL', {
+                            'align': 'center'
+                        })['setOrigin'](0.5)[_0x469d2f(0x8a2)](0x2)['setVisible'](!0x1), this[_0x469d2f(0x915)]['addEvent']({
+                            'delay': 0x1f4,
+                            'callback': () => {
+                                const _0x48a817 = _0x469d2f;
+                                this[_0x48a817(0x18c7)]();
+                            }
+                        });
+                    } ['ShowPopu'](_0x24aa39) {
+                        const _0x4309f0 = _0x205932;
+                        this['blackFader'][_0x4309f0(0x183f)](!0x0), this[_0x4309f0(0x163)][_0x4309f0(0x183f)](!0x0), this[_0x4309f0(0x167a)]['setVisible'](!0x0), this[_0x4309f0(0x20b)]['setVisible'](!0x0), this[_0x4309f0(0x98e)]['setVisible'](!0x0), this[_0x4309f0(0x14fd)]['setVisible'](!0x0), this[_0x4309f0(0xb46)][_0x4309f0(0x183f)](!0x0), this[_0x4309f0(0x915)]['addEvent']({
+                            'delay': 0x7d0,
+                            'callback': () => {
+                                const _0x41e23d = _0x4309f0;
+                                this[_0x41e23d(0x10cc)](_0x24aa39);
+                            }
+                        });
+                    } ['HidePopu']() {
+                        const _0x3d31f2 = _0x205932;
+                        this[_0x3d31f2(0x1174)]['setVisible'](!0x1), this['popuBG'][_0x3d31f2(0x183f)](!0x1), this[_0x3d31f2(0x167a)][_0x3d31f2(0x183f)](!0x1), this['popuOKButton']['setVisible'](!0x1), this['popuCancelButton']['setVisible'](!0x1), this[_0x3d31f2(0x14fd)][_0x3d31f2(0x183f)](!0x1), this[_0x3d31f2(0xb46)][_0x3d31f2(0x183f)](!0x1), this[_0x3d31f2(0x2e6)]();
+                    } ['enablePopuInput'](_0x4ddfca) {
+                        const _0x5728c1 = _0x205932;
+                        this[_0x5728c1(0x20b)]['setInteractive'](), this['popuOKButton'][_0x5728c1(0x596)](), this['popuOKButton']['once']('pointerdown', () => {
+                            _0x4ddfca && _0x4ddfca();
+                        }), this['popuCancelButton']['setInteractive'](), this[_0x5728c1(0x98e)][_0x5728c1(0x596)](), this[_0x5728c1(0x98e)]['once']('pointerdown', () => {
+                            const _0x3966e2 = _0x5728c1;
+                            this[_0x3966e2(0xbfd)]();
+                        });
+                    } ['DoSendToStash']() {
+                        const _0x3ab433 = _0x205932;
+                        window[_0x3ab433(0x102d)]('DoSendToStash');
+                    } ['DoRestoreStash']() {
+                        window['alert']('DoRestoreStash');
+                    } ['disablePopuInput']() {
+                        const _0x515c53 = _0x205932;
+                        this[_0x515c53(0x20b)]['removeInteractive'](), this['popuCancelButton'][_0x515c53(0xb7c)]();
+                    } ['EnableInput']() {
+                        const _0x456f10 = _0x205932;
+                        this[_0x456f10(0x15c3)][_0x456f10(0x76d)](), this[_0x456f10(0x15c3)]['removeAllListeners'](), this[_0x456f10(0x15c3)][_0x456f10(0x3c7)]('pointerdown', () => {
+                            const _0x31709a = _0x456f10;
+                            this['ShowPopu'](this[_0x31709a(0x699)]['bind'](this));
+                        }), this[_0x456f10(0x413)]['setInteractive'](), this['RestoreStashButton'][_0x456f10(0x596)](), this[_0x456f10(0x413)]['once']('pointerdown', () => {
+                            this['ShowPopu'](this['DoRestoreStash']['bind'](this));
+                        });
+                    } ['DisableInput']() {
+                        const _0x327dc3 = _0x205932;
+                        this['SendToStashButton']['removeInteractive'](), this['RestoreStashButton'][_0x327dc3(0xb7c)]();
+                    } ['DestroyUIGrid']() {
+                        const _0xc527bc = _0x205932;
+                        _0x5bc320[_0xc527bc(0xd2c)][_0xc527bc(0x1043)][_0xc527bc(0x69e)]['UI_overlayScene'][_0xc527bc(0x110c)]();
+                    } ['update']() {} ['destroy']() {}
+                }
+                _0x3b2914['default'] = _0x2cec5b;
+            };

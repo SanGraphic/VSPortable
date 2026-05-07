@@ -1,0 +1,36 @@
+// Module 0x139d8
+// Args: _0x36406d, _0x16fea5, _0x300ef7
+
+export default (_0x36406d, _0x16fea5, _0x300ef7) => {
+                'use strict';
+                const _0x155eeb = a0_0x6932;
+                var _0x3531ba = this && this['__importDefault'] || function(_0x1b867b) {
+                    const _0x57e57b = a0_0x6932;
+                    return _0x1b867b && _0x1b867b['__esModule'] ? _0x1b867b : {
+                        'default': _0x1b867b
+                    };
+                };
+                Object['defineProperty'](_0x16fea5, '__esModule', {
+                    'value': !0x0
+                });
+                const _0xc7e0da = _0x3531ba(_0x300ef7(0x5f07)),
+                    _0x579a65 = _0x3531ba(_0x300ef7(0x166d5)),
+                    _0x46ef9d = _0x3531ba(_0x300ef7(0xc42e)),
+                    _0x28d03e = _0x3531ba(_0x300ef7(0x1fd7)),
+                    _0x45b233 = _0x3531ba(_0x300ef7(0x5103));
+                class _0x3d0ad5 extends _0x579a65['default'] {
+                    constructor(_0x417e30, _0x326ef5, _0x12cf61) {
+                        const _0xf51640 = a0_0x6932;
+                        super(_0x417e30, _0x326ef5, _0x12cf61, _0x46ef9d['default']['ROAST']), _0xc7e0da['default']['Core']['scene']['add']['existing'](this), this['setScale'](_0x45b233['default']['PixelScale']);
+                    } ['GetTaken']() {
+                        const _0xd269fe = _0x155eeb;
+                        _0xc7e0da[_0xd269fe(0xd2c)][_0xd269fe(0x1043)][_0xd269fe(0xf45)] = !0x0, _0xc7e0da[_0xd269fe(0xd2c)][_0xd269fe(0x1043)][_0xd269fe(0x10f6)]['hp'] < _0xc7e0da[_0xd269fe(0xd2c)]['Core']['Player']['maxHp'] ? (_0xc7e0da['default']['Core']['Player']['RecoverHp'](this[_0xd269fe(0xb81)], !0x0, !0x0), _0xc7e0da[_0xd269fe(0xd2c)][_0xd269fe(0x1043)]['PlayerOptions']['RunPickups'][_0xd269fe(0x1564)](_0x46ef9d[_0xd269fe(0xd2c)]['ROAST'])) : (_0xc7e0da[_0xd269fe(0xd2c)]['Core'][_0xd269fe(0x14d8)]['AddCoins'](0x19), _0xc7e0da[_0xd269fe(0xd2c)]['Core'][_0xd269fe(0x14d8)][_0xd269fe(0x9f7)]['push'](_0x46ef9d[_0xd269fe(0xd2c)]['COINBAG2']), _0xc7e0da[_0xd269fe(0xd2c)][_0xd269fe(0x1043)][_0xd269fe(0x1273)]['UpdateCoins'](), _0xc7e0da[_0xd269fe(0xd2c)][_0xd269fe(0x1267)][_0xd269fe(0x7f6)](_0x28d03e[_0xd269fe(0xd2c)][_0xd269fe(0x10cf)], {
+                            'volume': 0.5
+                        })), super['GetTaken'](), _0xc7e0da[_0xd269fe(0xd2c)][_0xd269fe(0x1267)]['PlaySound'](_0x28d03e[_0xd269fe(0xd2c)][_0xd269fe(0x16d1)], {
+                            'volume': 0.6,
+                            'rate': 0x1
+                        });
+                    }
+                }
+                _0x16fea5['default'] = _0x3d0ad5;
+            };

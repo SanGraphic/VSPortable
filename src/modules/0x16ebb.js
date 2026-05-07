@@ -1,0 +1,192 @@
+// Module 0x16ebb
+// Args: _0x13baa7, _0xc12d88, _0x58cbe2
+
+export default (_0x13baa7, _0xc12d88, _0x58cbe2) => {
+                'use strict';
+                const _0x9cdb0a = a0_0x6932;
+                var _0x3b372f = this && this['__createBinding'] || (Object['create'] ? function(_0x1ab30f, _0x528267, _0x36643f, _0x37d438) {
+                        const _0x3f2842 = _0x9cdb0a;
+                        void 0x0 === _0x37d438 && (_0x37d438 = _0x36643f);
+                        var _0x133572 = Object['getOwnPropertyDescriptor'](_0x528267, _0x36643f);
+                        _0x133572 && !('get' in _0x133572 ? !_0x528267[_0x3f2842(0x16f1)] : _0x133572['writable'] || _0x133572[_0x3f2842(0xf70)]) || (_0x133572 = {
+                            'enumerable': !0x0,
+                            'get': function() {
+                                return _0x528267[_0x36643f];
+                            }
+                        }), Object['defineProperty'](_0x1ab30f, _0x37d438, _0x133572);
+                    } : function(_0x8d38ae, _0x3fad90, _0x386747, _0x4bb81e) {
+                        void 0x0 === _0x4bb81e && (_0x4bb81e = _0x386747), _0x8d38ae[_0x4bb81e] = _0x3fad90[_0x386747];
+                    }),
+                    _0x221d30 = this && this['__setModuleDefault'] || (Object['create'] ? function(_0x523874, _0x3c3e72) {
+                        const _0x3984d0 = _0x9cdb0a;
+                        Object[_0x3984d0(0x811)](_0x523874, 'default', {
+                            'enumerable': !0x0,
+                            'value': _0x3c3e72
+                        });
+                    } : function(_0x2aa451, _0x48f03d) {
+                        const _0x573c28 = _0x9cdb0a;
+                        _0x2aa451[_0x573c28(0xd2c)] = _0x48f03d;
+                    }),
+                    _0x21c374 = this && this['__importStar'] || function(_0x4b61fc) {
+                        const _0x28ed36 = _0x9cdb0a;
+                        if (_0x4b61fc && _0x4b61fc['__esModule']) return _0x4b61fc;
+                        var _0x4820e0 = {};
+                        if (null != _0x4b61fc) {
+                            for (var _0x445285 in _0x4b61fc) 'default' !== _0x445285 && Object[_0x28ed36(0x977)][_0x28ed36(0x2cf)][_0x28ed36(0xff0)](_0x4b61fc, _0x445285) && _0x3b372f(_0x4820e0, _0x4b61fc, _0x445285);
+                        }
+                        return _0x221d30(_0x4820e0, _0x4b61fc), _0x4820e0;
+                    },
+                    _0x30be0d = this && this['__importDefault'] || function(_0x2fa763) {
+                        const _0x27764a = _0x9cdb0a;
+                        return _0x2fa763 && _0x2fa763[_0x27764a(0x16f1)] ? _0x2fa763 : {
+                            'default': _0x2fa763
+                        };
+                    };
+                Object['defineProperty'](_0xc12d88, '__esModule', {
+                    'value': !0x0
+                });
+                const _0xce47bd = _0x58cbe2(0x16c14),
+                    _0x1c242b = _0x30be0d(_0x58cbe2(0xccae)),
+                    _0x56236f = _0x21c374(_0x58cbe2(0x5f07)),
+                    _0x51f915 = _0x30be0d(_0x58cbe2(0x169b4)),
+                    _0x288020 = _0x30be0d(_0x58cbe2(0x1fd7)),
+                    _0x4725e1 = _0x30be0d(_0x58cbe2(0xc42e));
+                class _0x4325bf extends Phaser['Scene'] {
+                    constructor() {
+                        const _0x3c679b = _0x9cdb0a;
+                        super({
+                            'key': _0x51f915[_0x3c679b(0xd2c)][_0x3c679b(0x1408)]
+                        }), this['doShadowGag'] = !0x1;
+                    } ['preload']() {
+                        const _0x21a040 = _0x9cdb0a;
+                        this['doShadowGag'] = !0x1, _0x56236f['default']['Core']['JustGotJubilee'] && (_0x56236f['default'][_0x21a040(0x1043)][_0x21a040(0xe52)] = !0x1, this['doShadowGag'] = !0x0);
+                    } ['onControl']() {
+                        const _0x312f72 = _0x9cdb0a;
+                        this['VersionText']['text'] = _0x56236f[_0x312f72(0xa64)] + _0x56236f[_0x312f72(0xfd7)];
+                    } ['create']() {
+                        const _0x301e7c = _0x9cdb0a;
+                        this['input']['keyboard']['addKey'](Phaser[_0x301e7c(0xd70)][_0x301e7c(0xa19)][_0x301e7c(0x10f8)]['CTRL'])['once']('down', () => {
+                            const _0x4de595 = _0x301e7c;
+                            this[_0x4de595(0xef9)]();
+                        }), this['SceneContainer'] = this[_0x301e7c(0x18bd)]['container'](0x0, this[_0x301e7c(0x12f9)][_0x301e7c(0x140e)]), this[_0x301e7c(0x1ac3)][_0x301e7c(0x8a2)]((0x0, _0x56236f[_0x301e7c(0x9c7)])());
+                        const _0x43f133 = 0.5 * this['renderer'][_0x301e7c(0x173c)],
+                            _0x1d2a06 = (this['renderer']['height'], 0x18 * _0x56236f[_0x301e7c(0x1b10)]),
+                            _0xdfd8f = -_0x1d2a06,
+                            _0x3f839a = 0x8 * -_0x1d2a06;
+                        this[_0x301e7c(0x314)] = new _0xce47bd['NineSlice'](this, _0x1c242b[_0x301e7c(0xd2c)][_0x301e7c(0x5b3)], {
+                            'x': _0x56236f['SAFEAREA']['left'] + _0x1d2a06,
+                            'y': _0xdfd8f,
+                            'width': 0x40,
+                            'height': 0x10
+                        })['setScale'](0x4 * _0x56236f[_0x301e7c(0x1b10)])['setOrigin'](0x0, 0x1), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this[_0x301e7c(0x314)]), this['CreditsButton'] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b[_0x301e7c(0xd2c)][_0x301e7c(0x5b3)], {
+                            'x': _0x56236f[_0x301e7c(0x1e0)][_0x301e7c(0x1634)],
+                            'y': _0xdfd8f - 0xe,
+                            'width': 0x40,
+                            'height': 0x10
+                        })[_0x301e7c(0x8a2)](0x4 * _0x56236f[_0x301e7c(0x1b10)])[_0x301e7c(0xf8e)](0.5, 0x1), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this['CreditsButton']), this['VersionButton'] = new _0xce47bd['NineSlice'](this, _0x1c242b[_0x301e7c(0xd2c)]['DisabledMiniButton'], {
+                            'x': 0.95 * this[_0x301e7c(0x12f9)][_0x301e7c(0x173c)],
+                            'y': _0xdfd8f,
+                            'width': 0x40,
+                            'height': 0x10
+                        })[_0x301e7c(0x8a2)](0x4 * _0x56236f[_0x301e7c(0x1b10)])[_0x301e7c(0xf8e)](0x1, 0x1)[_0x301e7c(0x183f)](!0x1), this['SceneContainer'][_0x301e7c(0x18bd)](this[_0x301e7c(0x1586)]), this[_0x301e7c(0x1888)] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b['default'][_0x301e7c(0x1608)], {
+                            'x': _0x56236f[_0x301e7c(0x1e0)][_0x301e7c(0xf42)] + _0x1d2a06,
+                            'y': _0x3f839a,
+                            'width': 0x40,
+                            'height': 0x1e
+                        })[_0x301e7c(0x8a2)](0x4 * _0x56236f['MASTER_SCALE'])[_0x301e7c(0xf8e)](0x0, 0x1), this[_0x301e7c(0x1ac3)]['add'](this['CollectionButton']), this[_0x301e7c(0x188)] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b[_0x301e7c(0xd2c)][_0x301e7c(0x1608)], {
+                            'x': _0x56236f[_0x301e7c(0x1e0)]['right'] - _0x1d2a06,
+                            'y': _0x3f839a,
+                            'width': 0x40,
+                            'height': 0x1e
+                        })[_0x301e7c(0x8a2)](0x4 * _0x56236f[_0x301e7c(0x1b10)])[_0x301e7c(0xf8e)](0x1, 0x1), this['SceneContainer'][_0x301e7c(0x18bd)](this['AchievementButton']), this[_0x301e7c(0x1466)] = _0x56236f[_0x301e7c(0xd2c)]['Core']['PlayerOptions']['CollectedItems']['indexOf'](_0x4725e1['default']['RELIC_GOUDA']) > -0x1, this[_0x301e7c(0x1466)] && (this[_0x301e7c(0xf69)] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b['default']['OptionsButton'], {
+                            'x': _0x56236f['SAFEAREA'][_0x301e7c(0xf42)] + _0x1d2a06,
+                            'y': _0xdfd8f,
+                            'width': 0x40,
+                            'height': 0x1e
+                        })['setScale'](0x4 * _0x56236f[_0x301e7c(0x1b10)])[_0x301e7c(0xf8e)](0x0, 0x1), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this['BestiaryButton']), this[_0x301e7c(0x1a9)] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this['BestiaryButton']['x'] + 0.5 * this['BestiaryButton'][_0x301e7c(0xe75)], this['BestiaryButton']['y'] - 0.5 * this[_0x301e7c(0xf69)]['displayHeight'], _0x56236f[_0x301e7c(0xd2c)]['Lang'][_0x301e7c(0xb10)]('menu_bestiary'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)]['FONTFAMILY']
+                        })[_0x301e7c(0xf8e)](0.5, 0.5)[_0x301e7c(0x8a2)](0x2 * _0x56236f['MASTER_SCALE']), _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this[_0x301e7c(0x1a9)], !0x1, 0x64), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this[_0x301e7c(0x1a9)])), this[_0x301e7c(0xd32)] = _0x56236f[_0x301e7c(0xd2c)]['Core'][_0x301e7c(0x14d8)][_0x301e7c(0x1481)][_0x301e7c(0x1303)](_0x4725e1[_0x301e7c(0xd2c)][_0x301e7c(0x1747)]) > -0x1, this['SecretsButton'] = new _0xce47bd['NineSlice'](this, _0x1c242b[_0x301e7c(0xd2c)]['OptionsButton'], {
+                            'x': _0x56236f[_0x301e7c(0x1e0)][_0x301e7c(0x15d9)] - _0x1d2a06,
+                            'y': _0xdfd8f,
+                            'width': 0x40,
+                            'height': 0x1e
+                        })['setScale'](0x4 * _0x56236f[_0x301e7c(0x1b10)])['setOrigin'](0x1, 0x1)[_0x301e7c(0x183f)](!0x1), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this[_0x301e7c(0xf62)]), this['SecretsText'] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this[_0x301e7c(0xf62)]['x'] - 0.5 * this['SecretsButton'][_0x301e7c(0xe75)], this['SecretsButton']['y'] - 0.5 * this[_0x301e7c(0xf62)]['displayHeight'], _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)][_0x301e7c(0xb10)]('menu_secrets'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)]['Lang']['FONTFAMILY']
+                        })[_0x301e7c(0xf8e)](0.5, 0.5)[_0x301e7c(0x8a2)](0x2 * _0x56236f[_0x301e7c(0x1b10)])[_0x301e7c(0x183f)](!0x1), _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this[_0x301e7c(0xca6)], !0x1, 0x64), this['SceneContainer']['add'](this['SecretsText']), this[_0x301e7c(0xd32)] && this[_0x301e7c(0x1a97)](), this[_0x301e7c(0x7dd)] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b[_0x301e7c(0xd2c)]['GreenButton'], {
+                            'x': _0x43f133,
+                            'y': _0x3f839a,
+                            'width': 0x50,
+                            'height': 0x20
+                        })[_0x301e7c(0x8a2)](0x4 * _0x56236f['MASTER_SCALE'])[_0x301e7c(0xf8e)](0.5, 0x1), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this['PowerupButton']), this[_0x301e7c(0x19c6)] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b['default'][_0x301e7c(0x1608)], {
+                            'x': _0x43f133,
+                            'y': this[_0x301e7c(0x7dd)]['y'] - 0xa * _0x1d2a06,
+                            'width': 0x60,
+                            'height': 0x20
+                        })['setScale'](0x4 * _0x56236f['MASTER_SCALE'])['setOrigin'](0.5, 0x1), this[_0x301e7c(0x1ac3)]['add'](this[_0x301e7c(0x19c6)]), this['CollectionText'] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this[_0x301e7c(0x1888)]['x'] + 0.5 * this['CollectionButton'][_0x301e7c(0xe75)], this['CollectionButton']['y'] - 0.5 * this[_0x301e7c(0x1888)][_0x301e7c(0x828)], _0x56236f['default']['Lang'][_0x301e7c(0xb10)]('menu_collection'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)]['Lang'][_0x301e7c(0x6d7)]
+                        })[_0x301e7c(0xf8e)](0.5, 0.5)[_0x301e7c(0x8a2)](0x2 * _0x56236f['MASTER_SCALE']), _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this[_0x301e7c(0x135e)], !0x1, 0x64), this['SceneContainer']['add'](this['CollectionText']), this[_0x301e7c(0x19f9)] = new Phaser['GameObjects']['Text'](this, this['AchievementButton']['x'] - 0.5 * this[_0x301e7c(0x188)]['displayWidth'], this['AchievementButton']['y'] - 0.5 * this[_0x301e7c(0x188)]['displayHeight'], _0x56236f['default']['Lang']['getLang']('menu_unlocks'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)]['FONTFAMILY']
+                        })[_0x301e7c(0xf8e)](0.5, 0.5)[_0x301e7c(0x8a2)](0x2 * _0x56236f['MASTER_SCALE']), _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)]['scaleToMaxFast'](this['AchievementText'], !0x1, 0x64), this['SceneContainer']['add'](this['AchievementText']), this[_0x301e7c(0x1465)] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this[_0x301e7c(0x7dd)]['x'], this[_0x301e7c(0x7dd)]['y'] - 0.5 * this['PowerupButton']['displayHeight'], _0x56236f['default'][_0x301e7c(0x1f1)]['getLang']('menu_power_up'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)]['Lang'][_0x301e7c(0x6d7)]
+                        })['setOrigin'](0.5, 0.5)[_0x301e7c(0x8a2)](0x3 * _0x56236f[_0x301e7c(0x1b10)]), _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this['PowerupText'], !0x1, 0x50), this[_0x301e7c(0x1ac3)]['add'](this[_0x301e7c(0x1465)]), this[_0x301e7c(0x3a3)] = new Phaser['GameObjects'][(_0x301e7c(0x1ae9))](this, this['StartButton']['x'], this['StartButton']['y'] - 0.5 * this[_0x301e7c(0x19c6)][_0x301e7c(0x828)], _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)][_0x301e7c(0xb10)]('menu_start'), {
+                            'fontFamily': _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0x6d7)]
+                        })['setOrigin'](0.5, 0.5)[_0x301e7c(0x8a2)](0x4 * _0x56236f['MASTER_SCALE']), _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this['StartText'], !0x1, 0x50), this[_0x301e7c(0x1ac3)]['add'](this[_0x301e7c(0x3a3)]), _0x56236f[_0x301e7c(0xd2c)]['Core'][_0x301e7c(0x14d8)][_0x301e7c(0x2d3)]['length'] >= 0x5 && (this['QuickStartButton'] = new _0xce47bd[(_0x301e7c(0x1a31))](this, _0x1c242b['default']['OptionsMiniButton'], {
+                            'x': _0x56236f[_0x301e7c(0x1e0)][_0x301e7c(0x15d9)] - _0x1d2a06,
+                            'y': this[_0x301e7c(0x19c6)]['y'] - 0.5 * this[_0x301e7c(0x19c6)]['height'],
+                            'width': 0x40,
+                            'height': 0x10
+                        })['setScale'](0x4 * _0x56236f['MASTER_SCALE'])[_0x301e7c(0xf8e)](0x1, 0x1), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this[_0x301e7c(0x12ac)]), this['QuickStartText'] = new Phaser[(_0x301e7c(0xbf2))]['Text'](this, this['QuickStartButton']['x'] - 0.5 * this['QuickStartButton'][_0x301e7c(0xe75)], this[_0x301e7c(0x12ac)]['y'] - 0.5 * this[_0x301e7c(0x12ac)][_0x301e7c(0x828)] - 0x2, _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0xb10)]('menu_quickstart'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)]['FONTFAMILY']
+                        })[_0x301e7c(0xf8e)](0.5, 0.5)['setScale'](0x2 * _0x56236f['MASTER_SCALE']), _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this[_0x301e7c(0x1957)], !0x1, 0x64), this['SceneContainer'][_0x301e7c(0x18bd)](this[_0x301e7c(0x1957)])), this[_0x301e7c(0xb12)] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this[_0x301e7c(0x13ee)]['x'], this[_0x301e7c(0x13ee)]['y'] - 0.5 * this[_0x301e7c(0x13ee)][_0x301e7c(0x828)], _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0xb10)]('menu_credit'), {
+                            'fontFamily': _0x56236f[_0x301e7c(0xd2c)][_0x301e7c(0x1f1)][_0x301e7c(0x6d7)]
+                        })['setOrigin'](0.5, 0.5)['setScale'](0x2 * _0x56236f[_0x301e7c(0x1b10)]), _0x56236f['default'][_0x301e7c(0x1f1)][_0x301e7c(0x14a8)](this[_0x301e7c(0xb12)], !0x1, 0x64), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this[_0x301e7c(0xb12)]), this[_0x301e7c(0x2d8)] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this[_0x301e7c(0x314)]['x'] + 0.5 * this[_0x301e7c(0x314)][_0x301e7c(0xe75)], this[_0x301e7c(0x314)]['y'] - 0.5 * this[_0x301e7c(0x314)][_0x301e7c(0x828)], _0x56236f['default']['Lang'][_0x301e7c(0xb10)]('menu_screen'), {
+                            'fontFamily': _0x56236f['default']['Lang'][_0x301e7c(0x6d7)]
+                        })[_0x301e7c(0xf8e)](0.5, 0.5)[_0x301e7c(0x8a2)](0x2 * _0x56236f[_0x301e7c(0x1b10)]), _0x56236f['default']['Lang'][_0x301e7c(0x14a8)](this[_0x301e7c(0x2d8)], !0x1, 0x50), this[_0x301e7c(0x1ac3)]['add'](this['ResolutionText']);
+                        let _0x16e3f3 = _0x56236f['VSVERSION'];
+                        this['VersionText'] = new Phaser[(_0x301e7c(0xbf2))][(_0x301e7c(0x1ae9))](this, this[_0x301e7c(0x1586)]['x'] - 0.5 * this['VersionButton']['displayWidth'], this[_0x301e7c(0x1586)]['y'] - 0.5 * this[_0x301e7c(0x1586)][_0x301e7c(0x828)], _0x16e3f3, {})[_0x301e7c(0xf8e)](0.5, 0.5)[_0x301e7c(0x8a2)](0x2 * _0x56236f['MASTER_SCALE']), _0x56236f['default']['Lang']['scaleToMaxFast'](this['VersionText'], !0x1, 0xc8), this[_0x301e7c(0x1ac3)][_0x301e7c(0x18bd)](this['VersionText']), this[_0x301e7c(0xe11)](), this[_0x301e7c(0x314)][_0x301e7c(0x183f)](!0x1), this[_0x301e7c(0x2d8)][_0x301e7c(0x183f)](!0x1);
+                    } ['Wake']() {} ['Show']() {
+                        const _0xc39b07 = _0x9cdb0a;
+                        this[_0xc39b07(0x6d2)][_0xc39b07(0x183f)](!0x0, _0x51f915[_0xc39b07(0xd2c)]['UI_mainMenu']), this[_0xc39b07(0x449)]();
+                    } ['Hide']() {
+                        const _0x4cd191 = _0x9cdb0a;
+                        this['scene']['setVisible'](!0x1, _0x51f915['default'][_0x4cd191(0x1408)]);
+                    } ['EnableButtons']() {
+                        const _0x15e120 = _0x9cdb0a;
+                        this[_0x15e120(0x19c6)]['setInteractive'](), this['StartButton']['on']('pointerdown', () => {
+                            const _0x10de09 = _0x15e120;
+                            _0x56236f[_0x10de09(0xd2c)]['Core']['SceneManager'][_0x10de09(0xf8c)](), _0x56236f['default'][_0x10de09(0x1267)]['PlaySound'](_0x288020['default']['ClickIn']);
+                        }), this['QuickStartButton'] && (this[_0x15e120(0x12ac)]['setInteractive'](), this['QuickStartButton']['on']('pointerdown', () => {
+                            const _0x57aafd = _0x15e120;
+                            _0x56236f['default']['Core']['SceneManager'][_0x57aafd(0x931)](), _0x56236f[_0x57aafd(0xd2c)]['Sound'][_0x57aafd(0x7f6)](_0x288020[_0x57aafd(0xd2c)]['ClickIn']);
+                        })), this[_0x15e120(0x7dd)][_0x15e120(0x76d)](), this['PowerupButton']['on']('pointerdown', () => {
+                            const _0x11c319 = _0x15e120;
+                            _0x56236f[_0x11c319(0xd2c)][_0x11c319(0x1043)]['SceneManager'][_0x11c319(0x1610)](), _0x56236f['default']['Sound']['PlaySound'](_0x288020[_0x11c319(0xd2c)][_0x11c319(0x2b6)]);
+                        }), this[_0x15e120(0x1888)][_0x15e120(0x76d)](), this[_0x15e120(0x1888)]['on']('pointerdown', () => {
+                            const _0xc54244 = _0x15e120;
+                            _0x56236f['default'][_0xc54244(0x1043)][_0xc54244(0x69e)]['CollectionFromMainMenu'](), _0x56236f['default'][_0xc54244(0x1267)][_0xc54244(0x7f6)](_0x288020[_0xc54244(0xd2c)]['ClickIn']);
+                        }), this[_0x15e120(0x188)]['setInteractive'](), this[_0x15e120(0x188)]['on']('pointerdown', () => {
+                            const _0x4abadb = _0x15e120;
+                            _0x56236f[_0x4abadb(0xd2c)]['Core']['SceneManager']['AchievementsFromMainMenu'](), _0x56236f[_0x4abadb(0xd2c)]['Sound']['PlaySound'](_0x288020[_0x4abadb(0xd2c)]['ClickIn']);
+                        }), this[_0x15e120(0x13ee)]['setInteractive'](), this[_0x15e120(0x13ee)]['on']('pointerdown', () => {
+                            const _0x3c8aa6 = _0x15e120;
+                            _0x56236f['default']['Core'][_0x3c8aa6(0x69e)][_0x3c8aa6(0x1559)](), _0x56236f[_0x3c8aa6(0xd2c)][_0x3c8aa6(0x1267)][_0x3c8aa6(0x7f6)](_0x288020['default'][_0x3c8aa6(0x2b6)]);
+                        }), this[_0x15e120(0x1466)] && (this['BestiaryButton'][_0x15e120(0x76d)](), this[_0x15e120(0xf69)]['on']('pointerdown', () => {
+                            const _0x23a293 = _0x15e120;
+                            _0x56236f['default'][_0x23a293(0x1043)][_0x23a293(0x69e)][_0x23a293(0x7a9)](), _0x56236f[_0x23a293(0xd2c)][_0x23a293(0x1267)][_0x23a293(0x7f6)](_0x288020['default']['ClickIn']);
+                        })), this[_0x15e120(0xd32)] && this['enableSecretButton']();
+                    } ['DisableButtons']() {} ['update'](_0x4d578f) {} ['showSecretButton']() {
+                        const _0x27bf30 = _0x9cdb0a;
+                        this[_0x27bf30(0xf62)][_0x27bf30(0x183f)](!0x0), this[_0x27bf30(0xca6)]['setVisible'](!0x0), this[_0x27bf30(0x111c)] && this[_0x27bf30(0xf62)]['setTint'](0x0);
+                    } ['enableSecretButton']() {
+                        const _0x197643 = _0x9cdb0a;
+                        this[_0x197643(0xf62)][_0x197643(0x76d)](), this[_0x197643(0xf62)]['on']('pointerdown', () => {
+                            const _0x2b4f62 = _0x197643;
+                            _0x56236f[_0x2b4f62(0xd2c)]['Core'][_0x2b4f62(0x69e)][_0x2b4f62(0x13b)](), _0x56236f[_0x2b4f62(0xd2c)][_0x2b4f62(0x1267)][_0x2b4f62(0x7f6)](_0x288020[_0x2b4f62(0xd2c)][_0x2b4f62(0x2b6)]), this['SecretsButton'][_0x2b4f62(0xb34)](0xffffff);
+                        });
+                    } ['HighlightButton']() {
+                        const _0x1964f1 = _0x9cdb0a;
+                        this['selected'] && (this['highlight']['copyPosition'](this[_0x1964f1(0x117f)]), this[_0x1964f1(0xcd9)][_0x1964f1(0xf8e)](this[_0x1964f1(0x117f)][_0x1964f1(0x612)], this[_0x1964f1(0x117f)]['originY']), this['highlight']['setScale'](this[_0x1964f1(0x117f)][_0x1964f1(0x3a8)], this[_0x1964f1(0x117f)][_0x1964f1(0x1721)]));
+                    }
+                }
+                _0xc12d88['default'] = _0x4325bf;
+            };

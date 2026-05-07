@@ -1,0 +1,38 @@
+name: Build PS2 ROM
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ps2dev/ps2dev:latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build PS2 ELF
+        run: |
+          make -f Makefile.ps2
+          mkdir -p dist_ps2
+          cp vsport_ps2.elf dist_ps2/VSPORT.ELF
+
+      - name: Copy JS Assets
+        run: |
+          cp .webpack/renderer/vendors.bundle.beautified.js dist_ps2/VENDORS.JS
+          cp .webpack/renderer/main.bundle.beautified.js dist_ps2/MAIN.JS
+          cp SYSTEM.CNF dist_ps2/SYSTEM.CNF
+
+      - name: Install mkisofs
+        run: apk add cdrkit || apt-get update && apt-get install -y genisoimage
+
+      - name: Build ISO
+        run: genisoimage -o vsport_ps2.iso -R -J -V "VSPORT" dist_ps2/
+
+      - name: Upload ISO
+        uses: actions/upload-artifact@v3
+        with:
+          name: vsport-ps2-rom
+          path: vsport_ps2.iso

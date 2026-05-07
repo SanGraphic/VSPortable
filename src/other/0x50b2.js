@@ -1,0 +1,36 @@
+// Module 0x50b2
+// Args: _0x4428ff, _0x5beeac, _0x55e7d1
+
+export default (_0x4428ff, _0x5beeac, _0x55e7d1) => {
+                'use strict';
+                const _0x8ef98 = a0_0x6932;
+                var _0x33e446 = this && this['__importDefault'] || function(_0x3697f0) {
+                    return _0x3697f0 && _0x3697f0['__esModule'] ? _0x3697f0 : {
+                        'default': _0x3697f0
+                    };
+                };
+                Object['defineProperty'](_0x5beeac, '__esModule', {
+                    'value': !0x0
+                });
+                const _0x48e9ff = _0x33e446(_0x55e7d1(0x5f07)),
+                    _0x40c99a = _0x33e446(_0x55e7d1(0x166d5)),
+                    _0x346ba6 = _0x33e446(_0x55e7d1(0xc42e)),
+                    _0x4ec44e = _0x33e446(_0x55e7d1(0x1fd7)),
+                    _0x44fa1a = _0x33e446(_0x55e7d1(0x5103));
+                class _0x48d51d extends _0x40c99a['default'] {
+                    constructor(_0xbb20bf, _0x19037e, _0x211e4f) {
+                        const _0x7ff4bb = _0x8ef98;
+                        super(_0xbb20bf, _0x19037e, _0x211e4f, _0x346ba6[_0x7ff4bb(0xd2c)]['ROAST']), _0x48e9ff[_0x7ff4bb(0xd2c)]['Core'][_0x7ff4bb(0x6d2)][_0x7ff4bb(0x18bd)]['existing'](this), this[_0x7ff4bb(0x8a2)](_0x44fa1a[_0x7ff4bb(0xd2c)][_0x7ff4bb(0x15db)]);
+                    } ['Update']() {
+                        const _0xace7b3 = _0x8ef98;
+                        super[_0xace7b3(0xa9f)](), this['setDepth'](0x9 + this['y'] - _0x48e9ff[_0xace7b3(0xd2c)][_0xace7b3(0x1043)][_0xace7b3(0x10f6)]['y']);
+                    } ['GetTaken']() {
+                        const _0x26b5c5 = _0x8ef98;
+                        this['disableGet'] || (_0x48e9ff['default']['Core']['Player']['RecoverHp'](this[_0x26b5c5(0xb81)], !0x0, !0x0), _0x48e9ff[_0x26b5c5(0xd2c)][_0x26b5c5(0x1043)][_0x26b5c5(0x10f6)][_0x26b5c5(0xf90)](0x12c), _0x48e9ff['default'][_0x26b5c5(0x1043)][_0x26b5c5(0x14d8)][_0x26b5c5(0x9f7)][_0x26b5c5(0x1564)](this[_0x26b5c5(0xeb5)]), this['SetSeenItem'](this[_0x26b5c5(0xeb5)]), super[_0x26b5c5(0x437)](), _0x48e9ff[_0x26b5c5(0xd2c)][_0x26b5c5(0x1267)][_0x26b5c5(0x7f6)](_0x4ec44e[_0x26b5c5(0xd2c)]['Roast'], {
+                            'volume': 0.6,
+                            'rate': 0x1
+                        }, 0x1f4, 0x5));
+                    }
+                }
+                _0x5beeac['default'] = _0x48d51d;
+            };

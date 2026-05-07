@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist_ps2/
+*.iso
+*.elf
+*.tar.xz
+*.tar.gz
+quickjs/
+ps2dev/
+.webpack/
+vsport_full.exe
+vsport_game.exe
+vsport_benchmark.exe
+v_window.exe
+ps2dev_release.json

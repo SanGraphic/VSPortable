@@ -1,0 +1,57 @@
+// Module 0x142c3
+// Args: _0x148047, _0x295182, _0x483778
+
+export default (_0x148047, _0x295182, _0x483778) => {
+                'use strict';
+                const _0x3b6191 = a0_0x6932;
+                var _0x3aceb7 = this && this['__importDefault'] || function(_0x11e9f9) {
+                    const _0x12bc0e = a0_0x6932;
+                    return _0x11e9f9 && _0x11e9f9['__esModule'] ? _0x11e9f9 : {
+                        'default': _0x11e9f9
+                    };
+                };
+                Object['defineProperty'](_0x295182, '__esModule', {
+                    'value': !0x0
+                }), _0x295182['W_Spellstring'] = void 0x0;
+                const _0x4cf7d8 = _0x3aceb7(_0x483778(0xe49a)),
+                    _0x2485d1 = _0x3aceb7(_0x483778(0x5f07));
+                class _0x464ad2 extends _0x4cf7d8['default'] {
+                    constructor(_0x2323fa) {
+                        const _0x57aefa = _0x3b6191;
+                        super(_0x2323fa), this[_0x57aefa(0xa6b)] = 0x0, this[_0x57aefa(0x162c)] = 0x0, this[_0x57aefa(0x9a6)] = 0x1, this[_0x57aefa(0xb11)]([_0x2485d1[_0x57aefa(0xd2c)][_0x57aefa(0x1043)][_0x57aefa(0x10f6)]]);
+                    } ['SetSources'](_0x6718e3) {
+                        this['sources'] = _0x6718e3, this['maxSources'] = _0x6718e3['length'];
+                    } ['GetSource']() {
+                        const _0x789b8b = _0x3b6191;
+                        return this[_0x789b8b(0x162c)]++, this['sourceIndex'] >= this['sources'][_0x789b8b(0xed9)] && (this[_0x789b8b(0x162c)] = 0x0), this['sources'][this[_0x789b8b(0x162c)]];
+                    }
+                    get['PPower']() {
+                        const _0xf855a3 = _0x3b6191;
+                        let _0x41c01a = this[_0xf855a3(0x31f)] * (1.25 * this[_0xf855a3(0x712)]);
+                        return _0x2485d1[_0xf855a3(0xd2c)]['Core'][_0xf855a3(0x10f6)]['sineMight'] ? Math['min'](0xa, (_0x2485d1[_0xf855a3(0xd2c)]['Core']['Arcanas'][_0xf855a3(0x18f8)] + _0x2485d1[_0xf855a3(0xd2c)][_0xf855a3(0x1043)]['Player'][_0xf855a3(0x31f)]) * _0x2485d1['default'][_0xf855a3(0x1043)][_0xf855a3(0x10f6)][_0xf855a3(0x947)][_0xf855a3(0xb81)]) * _0x41c01a + _0x2485d1[_0xf855a3(0xd2c)]['Core'][_0xf855a3(0x1884)]['bloodlineDamage'] : Math[_0xf855a3(0x1084)](0xa, _0x2485d1['default']['Core'][_0xf855a3(0x1884)]['silentMight'] + _0x2485d1[_0xf855a3(0xd2c)]['Core'][_0xf855a3(0x10f6)][_0xf855a3(0x31f)]) * _0x41c01a + _0x2485d1['default']['Core'][_0xf855a3(0x1884)][_0xf855a3(0x1117)];
+                    } ['Fire']() {
+                        const _0x1be9fb = _0x3b6191;
+                        this[_0x1be9fb(0xa6b)] = Math[_0x1be9fb(0x1084)](0.4 * _0x2485d1[_0x1be9fb(0xd2c)][_0x1be9fb(0x1043)][_0x1be9fb(0x6d2)][_0x1be9fb(0x12f9)][_0x1be9fb(0x173c)], 0.4 * _0x2485d1['default']['Core'][_0x1be9fb(0x6d2)][_0x1be9fb(0x12f9)][_0x1be9fb(0x140e)]);
+                        let _0xe39d44 = this['closestAlive'](_0x2485d1['default'][_0x1be9fb(0x1043)]['Player'], _0x2485d1['default'][_0x1be9fb(0x1043)]['Enemies'], this[_0x1be9fb(0xa6b)]),
+                            _0xfb8e31 = this[_0x1be9fb(0x33b)](),
+                            _0x23bcec = _0xfb8e31['x'] + 0x8 * this[_0x1be9fb(0x68e)](),
+                            _0x4680c0 = _0xfb8e31['y'] - 0x18;
+                        if (_0xe39d44 && (this[_0x1be9fb(0x18a7)] = _0xe39d44, this[_0x1be9fb(0x970)](_0x23bcec, _0x4680c0, 0x0, this['target']), this[_0x1be9fb(0xa6f)](this[_0x1be9fb(0x18a7)])), this[_0x1be9fb(0x942)] > 0x1) {
+                            for (let _0x21888b = 0x1; _0x21888b < this['PAmount']; _0x21888b++) this['repeatInterval'] * _0x21888b > 0x0 ? this[_0x1be9fb(0x11fa)] = _0x2485d1[_0x1be9fb(0xd2c)][_0x1be9fb(0x1043)][_0x1be9fb(0x6d2)][_0x1be9fb(0x915)][_0x1be9fb(0x12b8)]({
+                                'delay': this['repeatInterval'] * _0x21888b,
+                                'loop': !0x1,
+                                'callback': () => {
+                                    const _0x17f067 = _0x1be9fb;
+                                    let _0x30f2b0 = this['closestAlive'](_0x2485d1['default']['Core'][_0x17f067(0x10f6)], _0x2485d1[_0x17f067(0xd2c)][_0x17f067(0x1043)][_0x17f067(0x1a91)], this[_0x17f067(0xa6b)]);
+                                    if (_0x30f2b0) {
+                                        let _0x7de28b = this[_0x17f067(0x33b)]();
+                                        _0x23bcec = _0x7de28b['x'] + 0x8 * this[_0x17f067(0x68e)](), this[_0x17f067(0x18a7)] = _0x30f2b0, this[_0x17f067(0x970)](_0x23bcec, _0x4680c0, 0x0, this[_0x17f067(0x18a7)]), this[_0x17f067(0xa6f)](this[_0x17f067(0x18a7)]);
+                                    }
+                                }
+                            }) : (this['FireOneBullet'](_0x23bcec, _0x4680c0, 0x0, this['target']), this['DirectDamage'](this['target']));
+                        }
+                        this['lastFiringInterval'] != this[_0x1be9fb(0x170c)] && (this[_0x1be9fb(0x162d)] = this[_0x1be9fb(0x170c)], this[_0x1be9fb(0x839)]());
+                    }
+                }
+                _0x295182['W_Spellstring'] = _0x464ad2, _0x295182['default'] = _0x464ad2;
+            };

@@ -1,0 +1,84 @@
+// Module 0x4d2b
+// Args: _0x23a0fa, _0x385b70, _0x169a84
+
+export default (_0x23a0fa, _0x385b70, _0x169a84) => {
+                'use strict';
+                const _0x422a93 = a0_0x6932;
+                var _0x5c9b93 = this && this['__importDefault'] || function(_0x3113ec) {
+                    return _0x3113ec && _0x3113ec['__esModule'] ? _0x3113ec : {
+                        'default': _0x3113ec
+                    };
+                };
+                Object['defineProperty'](_0x385b70, '__esModule', {
+                    'value': !0x0
+                });
+                const _0xeac60 = _0x5c9b93(_0x169a84(0x5f07)),
+                    _0x57625f = _0x5c9b93(_0x169a84(0xc42e)),
+                    _0x1796a5 = _0x5c9b93(_0x169a84(0x5103)),
+                    _0x282da1 = _0x169a84(0x18304),
+                    _0x434ce4 = _0x5c9b93(_0x169a84(0x4d17)),
+                    _0x166861 = _0x169a84(0x15ee2);
+                class _0x5e9c1e extends _0x166861['PickupGuarded'] {
+                    constructor(_0x341e54, _0x4f2dda, _0x2486fc) {
+                        const _0xc9a56f = _0x422a93;
+                        super(_0x341e54, _0x4f2dda, _0x2486fc, _0x57625f[_0xc9a56f(0xd2c)]['RELIC']), this[_0xc9a56f(0xeb5)] = _0x57625f['default']['RELIC'], this['particlesInterval'] = 0xc8, this[_0xc9a56f(0xb78)] = 0x64, this['res_Rosary'] = 0x1, _0xeac60['default']['Core'][_0xc9a56f(0x6d2)][_0xc9a56f(0x18bd)]['existing'](this), this[_0xc9a56f(0x8a2)](_0x1796a5[_0xc9a56f(0xd2c)]['PixelScale']), this[_0xc9a56f(0xc6e)] = !0x0, this['shadow'] = new Phaser['GameObjects']['Sprite'](_0xeac60[_0xc9a56f(0xd2c)]['Core'][_0xc9a56f(0x6d2)], _0x4f2dda, _0x2486fc, 'items', 'ShadowSpot.png'), this['glow'] = new Phaser[(_0xc9a56f(0xbf2))][(_0xc9a56f(0xa97))](_0xeac60['default'][_0xc9a56f(0x1043)][_0xc9a56f(0x6d2)], _0x4f2dda, _0x2486fc, 'vfx', 'round.png'), this[_0xc9a56f(0x1abc)] = this[_0xc9a56f(0x6d2)]['add'][_0xc9a56f(0x105b)](_0x4f2dda, _0x2486fc, 'UI', 'arrow_01.png'), this['Cursor'][_0xc9a56f(0xb4a)](0x270f), this[_0xc9a56f(0x1abc)][_0xc9a56f(0x8a2)](0x2), this['Cursor']['setAlpha'](0x1), this[_0xc9a56f(0x1abc)][_0xc9a56f(0xb34)](0xff00);
+                        const _0x436788 = this[_0xc9a56f(0x183e)][_0xc9a56f(0x1756)]('UI', {
+                            'start': 0x1,
+                            'end': 0x8,
+                            'zeroPad': 0x2,
+                            'prefix': 'arrow_',
+                            'suffix': '.png'
+                        });
+                        this[_0xc9a56f(0x1abc)]['anims']['create']({
+                            'key': 'idle',
+                            'frames': _0x436788,
+                            'frameRate': 0x10,
+                            'repeat': -0x1
+                        }), this[_0xc9a56f(0x1abc)][_0xc9a56f(0x902)]('idle');
+                    } ['OnRecycle']() {
+                        const _0x382edd = _0x422a93;
+                        var _0x31e3c0, _0xf1623d, _0x5d67e4;
+                        super['OnRecycle'](), this[_0x382edd(0x3f3)] = 0x0, null === (_0x31e3c0 = this[_0x382edd(0x781)]) || void 0x0 === _0x31e3c0 || _0x31e3c0['stop'](), this[_0x382edd(0x781)] && this[_0x382edd(0x6d2)][_0x382edd(0x12a1)][_0x382edd(0x393)](this['floatTween']), this[_0x382edd(0x781)] = this[_0x382edd(0x6d2)][_0x382edd(0x12a1)][_0x382edd(0x18bd)]({
+                            'targets': this,
+                            'y': this['y'] - 0x8,
+                            'duration': 0x3e8,
+                            'ease': 'Sine.easeInOut',
+                            'loop': -0x1,
+                            'yoyo': !0x0
+                        }), null === (_0xf1623d = this['shadowTween']) || void 0x0 === _0xf1623d || _0xf1623d['stop'](), this[_0x382edd(0xb2b)] && this[_0x382edd(0x6d2)]['tweens'][_0x382edd(0x393)](this['shadowTween']), this[_0x382edd(0xb2b)] = this['scene'][_0x382edd(0x12a1)][_0x382edd(0x18bd)]({
+                            'targets': this[_0x382edd(0xe0f)],
+                            'scale': 0.75,
+                            'duration': 0x3e8,
+                            'ease': 'Sine.easeInOut',
+                            'loop': -0x1,
+                            'yoyo': !0x0
+                        }), this[_0x382edd(0x6d2)]['add'][_0x382edd(0x1a88)](this[_0x382edd(0xe0f)]), this[_0x382edd(0xe0f)]['setPosition'](this['x'], this['y']), this['shadow']['setScale'](0x1), this[_0x382edd(0xe0f)][_0x382edd(0xdab)](0.5), this['scene'][_0x382edd(0x18bd)][_0x382edd(0x1a88)](this[_0x382edd(0x1a6f)]), this['glow']['setPosition'](this['x'], this['y']), this[_0x382edd(0x1a6f)][_0x382edd(0x11c7)](_0x282da1['BlendModes'][_0x382edd(0x1811)]), this['glow']['setAlpha'](0.5), null === (_0x5d67e4 = this[_0x382edd(0x536)]) || void 0x0 === _0x5d67e4 || _0x5d67e4['stop'](), this[_0x382edd(0x536)] && this[_0x382edd(0x6d2)][_0x382edd(0x12a1)][_0x382edd(0x393)](this[_0x382edd(0x536)]), this[_0x382edd(0x536)] = this['scene'][_0x382edd(0x12a1)]['add']({
+                            'targets': this['glow'],
+                            'alpha': 0x0,
+                            'duration': 0x1f4,
+                            'loop': -0x1,
+                            'yoyo': !0x0
+                        }), this['Cursor'][_0x382edd(0x183f)](!0x0);
+                    } ['DeSpawn']() {
+                        const _0x1fe263 = _0x422a93;
+                        super[_0x1fe263(0x14fb)](), this['floatTween']['remove'](), this['shadowTween'][_0x1fe263(0x393)](), this[_0x1fe263(0x6d2)][_0x1fe263(0x12a1)]['remove'](this[_0x1fe263(0xb2b)]), this['scene'][_0x1fe263(0x12a1)]['remove'](this[_0x1fe263(0x781)]), this[_0x1fe263(0x6d2)]['children']['remove'](this['shadow']), this[_0x1fe263(0x6d2)][_0x1fe263(0x3fe)][_0x1fe263(0x393)](this[_0x1fe263(0x1a6f)]), this[_0x1fe263(0x1abc)][_0x1fe263(0x183f)](!0x1);
+                    } ['Update'](_0x279cb7) {
+                        const _0x4a27ea = _0x422a93;
+                        super[_0x4a27ea(0xa9f)](_0x279cb7), this[_0x4a27ea(0xe0f)]['setPosition'](this['x'], this['y']), this[_0x4a27ea(0x1a6f)][_0x4a27ea(0x726)](this['x'], this['y']);
+                        let _0x109c06 = this[_0x4a27ea(0x6d2)][_0x4a27ea(0x12f9)]['height'];
+                        if (this['setDepth'](_0x109c06), this['shadow'][_0x4a27ea(0xb4a)](_0x109c06 - 0x1), this[_0x4a27ea(0x1a6f)][_0x4a27ea(0xb4a)](_0x109c06), this[_0x4a27ea(0xb78)] += _0x279cb7, this[_0x4a27ea(0xb78)] > this[_0x4a27ea(0x1593)] && (this[_0x4a27ea(0xb78)] = 0x0, _0xeac60[_0x4a27ea(0xd2c)][_0x4a27ea(0x1043)][_0x4a27ea(0x10c9)](this['x'], this['y'])), this[_0x4a27ea(0x3f3)] += 0.1, this[_0x4a27ea(0x1a6f)][_0x4a27ea(0xb34)](Phaser[_0x4a27ea(0xa82)]['Color'][_0x4a27ea(0xd9d)](0xff * Math['abs'](Math['sin'](this['colorValue'])), 0xff * Math['abs'](Math['cos'](0.5 * this[_0x4a27ea(0x3f3)])), 0xc8 + 0x37 * Math['abs'](Math['cos'](this[_0x4a27ea(0x3f3)])))), Math[_0x4a27ea(0x19db)](this['x'] - _0xeac60[_0x4a27ea(0xd2c)][_0x4a27ea(0x1043)][_0x4a27ea(0x10f6)]['x']) < 0.5 * this[_0x4a27ea(0x6d2)][_0x4a27ea(0x12f9)]['width'] && Math['abs'](this['y'] - _0xeac60[_0x4a27ea(0xd2c)][_0x4a27ea(0x1043)][_0x4a27ea(0x10f6)]['y']) < 0.5 * this[_0x4a27ea(0x6d2)]['renderer'][_0x4a27ea(0x140e)]) this['Cursor'][_0x4a27ea(0x183f)](!0x1);
+                        else {
+                            var _0x5b03c8 = this['AngleFromTargetRadians'](this);
+                            this[_0x4a27ea(0x1abc)][_0x4a27ea(0x9b5)](Phaser[_0x4a27ea(0x24f)][_0x4a27ea(0x1470)](_0x5b03c8)), this[_0x4a27ea(0x1abc)][_0x4a27ea(0xf01)](_0xeac60[_0x4a27ea(0xd2c)][_0x4a27ea(0x1043)]['Player']), this[_0x4a27ea(0x1abc)]['x'] += 0.45 * Math[_0x4a27ea(0xd7e)](_0x5b03c8) * this['scene'][_0x4a27ea(0x12f9)]['width'], this[_0x4a27ea(0x1abc)]['y'] += 0.45 * Math[_0x4a27ea(0xc80)](_0x5b03c8) * this[_0x4a27ea(0x6d2)][_0x4a27ea(0x12f9)]['height'], this[_0x4a27ea(0x1abc)][_0x4a27ea(0x183f)](!0x0);
+                        }
+                    } ['SetItemType'](_0x428d05) {
+                        const _0xc8b319 = _0x422a93;
+                        var _0x53e55d = _0x434ce4[_0xc8b319(0xd2c)][_0x428d05];
+                        this[_0xc8b319(0x994)](_0x53e55d[_0xc8b319(0x174d)], _0x53e55d['frameName']), this[_0xc8b319(0xeb5)] = _0x428d05;
+                    } ['GetTaken']() {
+                        const _0xe438a8 = _0x422a93;
+                        this[_0xe438a8(0x210)] || (this[_0xe438a8(0x1abc)][_0xe438a8(0x183f)](!0x1), _0xeac60[_0xe438a8(0xd2c)][_0xe438a8(0x1043)]['CurrentFoundRelic'] = this[_0xe438a8(0xeb5)], _0xeac60['default'][_0xe438a8(0x1043)]['RelicQueue'][_0xe438a8(0x1564)](this['itemType']), this[_0xe438a8(0x102c)](this[_0xe438a8(0xeb5)]), super[_0xe438a8(0x437)]());
+                    }
+                }
+                _0x385b70['default'] = _0x5e9c1e;
+            };

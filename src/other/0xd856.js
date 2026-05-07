@@ -1,0 +1,137 @@
+// Module 0xd856
+// Args: _0x564466, _0xe21249, _0x40e753
+
+export default (_0x564466, _0xe21249, _0x40e753) => {
+                'use strict';
+                const _0xd41f4f = a0_0x6932;
+                var _0x4c557e = this && this['__importDefault'] || function(_0x5362d6) {
+                    const _0x3674d2 = a0_0x6932;
+                    return _0x5362d6 && _0x5362d6['__esModule'] ? _0x5362d6 : {
+                        'default': _0x5362d6
+                    };
+                };
+                Object['defineProperty'](_0xe21249, '__esModule', {
+                    'value': !0x0
+                });
+                const _0x10a8ac = _0x4c557e(_0x40e753(0x5f07)),
+                    _0x4d2fb1 = _0x4c557e(_0x40e753(0xdee7)),
+                    _0x467b3b = _0x4c557e(_0x40e753(0x50ae)),
+                    _0x3efd26 = _0x4c557e(_0x40e753(0xc42e)),
+                    _0x555bb1 = _0x4c557e(_0x40e753(0x1386)),
+                    _0x378b63 = _0x4c557e(_0x40e753(0x608c)),
+                    _0x1c0fea = _0x4c557e(_0x40e753(0x11e6e)),
+                    _0x45a8a4 = _0x4c557e(_0x40e753(0xf789)),
+                    _0x2671f5 = _0x4c557e(_0x40e753(0x17e96)),
+                    _0x38ea46 = _0x4c557e(_0x40e753(0x50b2)),
+                    _0x22b276 = _0x4c557e(_0x40e753(0xb693)),
+                    _0x29ab66 = _0x4c557e(_0x40e753(0x8af)),
+                    _0x2d4014 = _0x4c557e(_0x40e753(0xbf1f)),
+                    _0x51a1c5 = _0x4c557e(_0x40e753(0x14b01)),
+                    _0x2ec12d = _0x4c557e(_0x40e753(0x165ca)),
+                    _0x5970fc = _0x4c557e(_0x40e753(0x16fe9)),
+                    _0x3bcb89 = _0x4c557e(_0x40e753(0x4d2b)),
+                    _0x34b01c = _0x4c557e(_0x40e753(0x13742)),
+                    _0x23306c = _0x4c557e(_0x40e753(0x8504)),
+                    _0xe3c4eb = _0x4c557e(_0x40e753(0x17e91)),
+                    _0x25e896 = _0x4c557e(_0x40e753(0xc903)),
+                    _0x1bf2f9 = _0x4c557e(_0x40e753(0xf1f6)),
+                    _0x197ada = _0x4c557e(_0x40e753(0xcd9)),
+                    _0x2271b8 = _0x4c557e(_0x40e753(0x139d8)),
+                    _0x14cd43 = _0x4c557e(_0x40e753(0x603b)),
+                    _0x90c84d = _0x4c557e(_0x40e753(0x639b)),
+                    _0x1d880e = _0x4c557e(_0x40e753(0x936d)),
+                    _0x7905a8 = _0x4c557e(_0x40e753(0x444)),
+                    _0x8ad353 = _0x4c557e(_0x40e753(0xb5aa)),
+                    _0x34563b = _0x4c557e(_0x40e753(0x1072b)),
+                    _0x3d9ed1 = _0x4c557e(_0x40e753(0x11e05)),
+                    _0x243397 = _0x4c557e(_0x40e753(0x18590)),
+                    _0x3bd4df = _0x4c557e(_0x40e753(0x301a));
+                class _0x1c7c92 extends Phaser['GameObjects']['Group'] {
+                    constructor(_0x2bc363) {
+                        const _0x13dc0b = _0xd41f4f;
+                        super(_0x2bc363), this[_0x13dc0b(0x1924)] = new Array(), this[_0x13dc0b(0x13f4)] = new Array(), this[_0x13dc0b(0x658)]();
+                        for (let _0x3deb4a in _0x3efd26[_0x13dc0b(0xd2c)]) this['stored'][_0x3deb4a] = new Array(), this[_0x13dc0b(0x13f4)][_0x3deb4a] = new Array();
+                    } ['Init']() {
+                        this['scene']['add']['existing'](this);
+                    } ['SpawnAt'](_0x1112c7, _0x18c53b, _0xe50afc) {
+                        const _0x19e707 = _0xd41f4f,
+                            _0x47583e = this['Spawn'](_0xe50afc);
+                        return this[_0x19e707(0x6d2)][_0x19e707(0x3fe)]['add'](_0x47583e), _0x47583e['x'] = _0x1112c7, _0x47583e['y'] = _0x18c53b, _0x47583e['OnRecycle'](), _0x47583e;
+                    } ['Spawn'](_0x3e7555) {
+                        const _0x409746 = _0xd41f4f;
+                        let _0x2f1be6;
+                        return this['stored'][_0x3e7555] ? _0x2f1be6 = this[_0x409746(0x1924)][_0x3e7555]['pop']() : (this['stored'][_0x3e7555] = new Array(), this[_0x409746(0x13f4)][_0x3e7555] = new Array()), _0x2f1be6 || (_0x2f1be6 = this['Make'](_0x3e7555), _0x2f1be6[_0x409746(0x658)]()), this['add'](_0x2f1be6, !0x0), this[_0x409746(0x13f4)][_0x3e7555][_0x409746(0x1564)](_0x2f1be6), _0x10a8ac['default'][_0x409746(0x1043)][_0x409746(0x13b2)]['add'](_0x2f1be6, !0x1), _0x2f1be6;
+                    } ['Return'](_0x199c64) {
+                        const _0x4e2844 = _0xd41f4f;
+                        this[_0x4e2844(0x6d2)][_0x4e2844(0x3fe)][_0x4e2844(0x393)](_0x199c64), this[_0x4e2844(0x393)](_0x199c64, !0x0, !0x1), this[_0x4e2844(0x13f4)][_0x199c64['itemType']]['splice'](this[_0x4e2844(0x13f4)][_0x199c64[_0x4e2844(0xeb5)]][_0x4e2844(0x1303)](_0x199c64), 0x1), _0x10a8ac['default'][_0x4e2844(0x1043)][_0x4e2844(0x13b2)][_0x4e2844(0x393)](_0x199c64, !0x1), _0x10a8ac[_0x4e2844(0xd2c)][_0x4e2844(0x1043)][_0x4e2844(0x15f2)][_0x4e2844(0x393)](_0x199c64, !0x1), this['stored'][_0x199c64['itemType']][_0x4e2844(0x1564)](_0x199c64);
+                    } ['Make'](_0x5c2a03) {
+                        const _0x2bcffb = _0xd41f4f;
+                        switch (_0x5c2a03) {
+                            default:
+                            case _0x3efd26['default']['COIN']:
+                                return new _0x4d2fb1['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x1143)]:
+                                return new _0x45a8a4['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0xfa0)]:
+                                return new _0x51a1c5['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['COINBAGMAX']:
+                                return new _0x22b276[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x1773)]:
+                                return new _0x467b3b[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['VACUUM']:
+                                return new _0x555bb1[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x13b0)]:
+                                return new _0x378b63[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0xa87)]:
+                                return new _0x197ada[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26['default'][_0x2bcffb(0x3cc)]:
+                                return new _0x2ec12d[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26['default'][_0x2bcffb(0x142c)]:
+                                return new _0x1c0fea[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['ROAST']:
+                                return new _0x38ea46[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x19af)]:
+                                return new _0x2671f5[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0xd68)]:
+                                return new _0xe3c4eb['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x12de)]:
+                                return new _0x29ab66['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['WEAPON']:
+                                return new _0x2d4014['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['LITTLEHEART']:
+                                return new _0x5970fc['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['RELIC']:
+                                return new _0x3bcb89['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['COFFIN']:
+                                return new _0x34b01c[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x682)]:
+                                return new _0x7905a8['default'](this, 0x0, 0x0);
+                            case _0x3efd26['default'][_0x2bcffb(0x986)]:
+                                return new _0x34563b['default'](this, 0x0, 0x0);
+                            case _0x3efd26['default']['MOONGATE']:
+                                return new _0x23306c['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['TELEPORTER']:
+                                return new _0x3bd4df['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)]['MERCHANT']:
+                                return new _0x25e896['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x15b9)]:
+                                return new _0x3d9ed1[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26['default'][_0x2bcffb(0x1498)]:
+                                return new _0x90c84d[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26['default'][_0x2bcffb(0x955)]:
+                                return new _0x8ad353[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x16e3)]:
+                                return new _0x1bf2f9['default'](this, 0x0, 0x0);
+                            case _0x3efd26['default'][_0x2bcffb(0x641)]:
+                                return new _0x14cd43['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0xe92)]:
+                                return new _0x2271b8[(_0x2bcffb(0xd2c))](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x518)]:
+                                return new _0x1d880e['default'](this, 0x0, 0x0);
+                            case _0x3efd26[_0x2bcffb(0xd2c)][_0x2bcffb(0x1240)]:
+                                return new _0x243397['default'](this, 0x0, 0x0);
+                        }
+                    }
+                }
+                _0xe21249['default'] = _0x1c7c92;
+            };

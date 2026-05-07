@@ -1,0 +1,72 @@
+// Module 0x71a7
+// Args: _0x35d8ce, _0xd7bbeb, _0x2bb9e0
+
+export default (_0x35d8ce, _0xd7bbeb, _0x2bb9e0) => {
+                'use strict';
+                const _0x23d320 = a0_0x6932;
+                var _0x44e3bf = this && this['__importDefault'] || function(_0x14c123) {
+                    const _0x6906b7 = a0_0x6932;
+                    return _0x14c123 && _0x14c123['__esModule'] ? _0x14c123 : {
+                        'default': _0x14c123
+                    };
+                };
+                Object['defineProperty'](_0xd7bbeb, '__esModule', {
+                    'value': !0x0
+                }), _0xd7bbeb['CollectionSecretPanel'] = void 0x0;
+                const _0x29cb63 = _0x44e3bf(_0x2bb9e0(0x1852a)),
+                    _0x2be2ec = _0x44e3bf(_0x2bb9e0(0x16800)),
+                    _0x7c4ac1 = _0x44e3bf(_0x2bb9e0(0x3107)),
+                    _0xf2a389 = _0x44e3bf(_0x2bb9e0(0x15dd)),
+                    _0x3d56f5 = _0x44e3bf(_0x2bb9e0(0x5103)),
+                    _0x2389b0 = _0x44e3bf(_0x2bb9e0(0x14639)),
+                    _0xffaeac = _0x44e3bf(_0x2bb9e0(0x5f07)),
+                    _0x437e51 = _0x44e3bf(_0x2bb9e0(0xb6a1)),
+                    _0xcb937e = _0x44e3bf(_0x2bb9e0(0x4d17)),
+                    _0x2f7e42 = _0x44e3bf(_0x2bb9e0(0x15866));
+                class _0x2b9528 extends Phaser['GameObjects']['Container'] {
+                    constructor(_0x37f4e6, _0x4d13b6, _0x47c5bd, _0x574c35) {
+                        const _0x213d0d = _0x23d320;
+                        super(_0x37f4e6, _0x4d13b6, _0x47c5bd), this[_0x213d0d(0x155c)] = _0x29cb63[_0x213d0d(0xd2c)][_0x213d0d(0xd7f)], this[_0x213d0d(0x155c)] = _0x574c35, this['setScale'](_0x3d56f5['default']['PixelScale']), this[_0x213d0d(0x1676)] = new Phaser[(_0x213d0d(0xbf2))]['Image'](this[_0x213d0d(0x6d2)], 0x20, 0x28, 'UI', 'menu_checkbox_24_bg.png')[_0x213d0d(0xf8e)](0.5)['setScale'](_0x3d56f5[_0x213d0d(0xd2c)]['PixelScale']), this['myTick'] = new Phaser['GameObjects']['Image'](this['scene'], 0x20, 0x28, 'UI', 'menu_checkbox_24_checkmark.png')['setOrigin'](0.5)[_0x213d0d(0x8a2)](_0x3d56f5[_0x213d0d(0xd2c)][_0x213d0d(0x15db)]), this['myDesc'] = new Phaser[(_0x213d0d(0xbf2))][(_0x213d0d(0x1ae9))](this[_0x213d0d(0x6d2)], 0x36, 0x28, _0xffaeac[_0x213d0d(0xd2c)][_0x213d0d(0x1f1)][_0x213d0d(0xb10)]('CollectionSecretPanel_description'), {})[_0x213d0d(0xf8e)](0x0, 0.5)[_0x213d0d(0x15fb)](0x136)[_0x213d0d(0x8a2)](_0x3d56f5['default'][_0x213d0d(0x15db)]), this['myInteractable'] = new Phaser['GameObjects']['Image'](this[_0x213d0d(0x6d2)], 0xa, 0x14, 'UI', 'blackDot.png')['setOrigin'](0x0)[_0x213d0d(0x8a2)](0x1a4, 0x28)['setAlpha'](0.001), this['myOverlay'] = new Phaser[(_0x213d0d(0xbf2))][(_0x213d0d(0x1951))](this['scene'], 0x177, 0x28, 'UI', 'frameB.png')[_0x213d0d(0xf8e)](0.5)[_0x213d0d(0x183f)](!0x1), this[_0x213d0d(0x1a7c)] = new Phaser['GameObjects']['Image'](this['scene'], 0x177, 0x28, 'UI', 'frameB.png')[_0x213d0d(0xf8e)](0.5), this[_0x213d0d(0xa73)] = new Phaser[(_0x213d0d(0xbf2))][(_0x213d0d(0x1951))](this['scene'], 0x177, 0x28, 'items', '')['setOrigin'](0.5)[_0x213d0d(0x8a2)](0x2 * _0x3d56f5['default'][_0x213d0d(0x15db)]), this[_0x213d0d(0x6e4)](this['secret']), this[_0x213d0d(0x18bd)]([this['myInteractable'], this[_0x213d0d(0x1676)], this[_0x213d0d(0x1817)], this['myDesc'], this['myIconBG'], this[_0x213d0d(0xa73)], this['myOverlay']]);
+                    } ['AssignData'](_0x3429fe) {
+                        const _0x4c0cb5 = _0x23d320;
+                        this['secret'] = _0x3429fe;
+                        var _0x4c8fa0 = _0x2be2ec['default'][this[_0x4c0cb5(0x155c)]];
+                        if (this[_0x4c0cb5(0x9e7)][_0x4c0cb5(0x758)] = _0x4c8fa0[_0x4c0cb5(0x1146)], this['myTick']['setVisible'](_0x4c8fa0[_0x4c0cb5(0x1355)]), _0x4c8fa0[_0x4c0cb5(0x1355)]) {
+                            if (_0x4c8fa0['weaponToUnlock']) {
+                                var _0x63719 = _0x7c4ac1['default'][_0x4c8fa0[_0x4c0cb5(0x138a)]][0x0];
+                                this[_0x4c0cb5(0xa73)]['setTexture'](_0x63719['texture'], _0x63719[_0x4c0cb5(0x8e3)]), this[_0x4c0cb5(0x1a7c)][_0x4c0cb5(0x183f)](!0x1)[_0x4c0cb5(0xf8e)](0.5), this['myOverlay'][_0x4c0cb5(0x183f)](!0x1);
+                            }
+                            if (_0x4c8fa0['characterToUnlock']) {
+                                let _0x208e73 = _0xf2a389['default'][_0x4c8fa0[_0x4c0cb5(0x6c3)]][0x0],
+                                    _0x5d8492 = _0x208e73['portraitName'] ? _0x208e73['portraitName'] : 'QuestionMark.png';
+                                this['myIcon'][_0x4c0cb5(0x994)]('UI', _0x5d8492)['setOrigin'](0.5), this[_0x4c0cb5(0x1a7c)]['setVisible'](!0x1), this['myOverlay'][_0x4c0cb5(0x183f)](!0x1);
+                            }
+                            if (_0x4c8fa0[_0x4c0cb5(0x16d7)]) {
+                                let _0x46ebc2 = _0x2389b0['default'][_0x4c8fa0[_0x4c0cb5(0x16d7)]][0x0],
+                                    _0x342cf2 = _0x46ebc2['frameNameUnlock'] ? _0x46ebc2['frameNameUnlock'] : 'QuestionMark.png';
+                                this[_0x4c0cb5(0xa73)]['setTexture']('UI', _0x342cf2)['setOrigin'](0.5), this[_0x4c0cb5(0x1a7c)][_0x4c0cb5(0x183f)](!0x1), this['myOverlay'][_0x4c0cb5(0x183f)](!0x1);
+                            }
+                            if (_0x4c8fa0['hyperToUnlock']) {
+                                let _0x5a539e = _0x2389b0[_0x4c0cb5(0xd2c)][_0x4c8fa0[_0x4c0cb5(0xc10)]][0x0],
+                                    _0xa54191 = _0x5a539e[_0x4c0cb5(0x8e3)] ? _0x5a539e['frameName'] : 'QuestionMark.png';
+                                this[_0x4c0cb5(0xa73)]['setTexture']('UI', _0xa54191)['setOrigin'](0.5), this[_0x4c0cb5(0x1a7c)]['setVisible'](!0x1), this[_0x4c0cb5(0x197e)]['setVisible'](!0x1);
+                            }
+                            if (_0x4c8fa0[_0x4c0cb5(0x1796)]) {
+                                var _0x5eeb08 = _0xcb937e['default'][_0x4c8fa0[_0x4c0cb5(0x1796)]];
+                                this[_0x4c0cb5(0xa73)][_0x4c0cb5(0x994)](_0x5eeb08[_0x4c0cb5(0x174d)], _0x5eeb08['frameName'])[_0x4c0cb5(0xf8e)](0.5, 0.5), this[_0x4c0cb5(0x1a7c)][_0x4c0cb5(0x183f)](!0x1)[_0x4c0cb5(0xf8e)](0.5), this['myOverlay']['setVisible'](!0x1);
+                            }
+                            if (_0x4c8fa0['goldPrize'] && _0x4c8fa0[_0x4c0cb5(0x3d5)] && (_0x63719 = _0x7c4ac1[_0x4c0cb5(0xd2c)][_0x4c8fa0['weaponIcon']][0x0], this[_0x4c0cb5(0xa73)]['setTexture']('items', _0x63719[_0x4c0cb5(0x8e3)])[_0x4c0cb5(0xf8e)](0.75, 0.5), this['myIconBG'][_0x4c0cb5(0x183f)](!0x1), this[_0x4c0cb5(0x197e)][_0x4c0cb5(0x183f)](!0x0), this[_0x4c0cb5(0x197e)][_0x4c0cb5(0x381)]('MoneyBagGreen.png')['setScale'](0x2 * _0x3d56f5[_0x4c0cb5(0xd2c)][_0x4c0cb5(0x15db)])), _0x4c8fa0['powerUpToUnlock']) {
+                                var _0x48c5d7 = _0x437e51['default'][_0x4c8fa0['powerUpToUnlock']][0x0];
+                                this[_0x4c0cb5(0xa73)][_0x4c0cb5(0x994)]('items', _0x48c5d7['frameName'])['setOrigin'](0.5, 0.5), this[_0x4c0cb5(0x1a7c)][_0x4c0cb5(0x183f)](!0x1), this[_0x4c0cb5(0x197e)][_0x4c0cb5(0x183f)](!0x1);
+                            }
+                            if (_0x4c8fa0['arcanaToUnlock'] >= 0x0) {
+                                var _0x455a39 = _0x2f7e42[_0x4c0cb5(0xd2c)][_0x4c8fa0['arcanaToUnlock']];
+                                this['myIcon'][_0x4c0cb5(0x994)]('items', _0x455a39['frameName'])[_0x4c0cb5(0xf8e)](0.5, 0.5), this[_0x4c0cb5(0x1a7c)][_0x4c0cb5(0x183f)](!0x0)[_0x4c0cb5(0xf8e)](0.5)[_0x4c0cb5(0x381)]('frameG.png')['setScale'](0x2), this[_0x4c0cb5(0x197e)]['setVisible'](!0x1);
+                            }
+                        } else this[_0x4c0cb5(0xa73)]['setTexture']('UI', 'QuestionMark.png')[_0x4c0cb5(0xf8e)](0.5), this['myIconBG']['setVisible'](!0x1), this[_0x4c0cb5(0x197e)][_0x4c0cb5(0x183f)](!0x1);
+                    } ['unlocked']() {
+                        this['myTick']['setVisible'](!0x0), this['AssignData'](this['secret']);
+                    }
+                }
+                _0xd7bbeb['CollectionSecretPanel'] = _0x2b9528, _0xd7bbeb['default'] = _0x2b9528;
+            };

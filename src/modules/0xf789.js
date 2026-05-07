@@ -1,0 +1,35 @@
+// Module 0xf789
+// Args: _0x116fd4, _0x591055, _0xdbfa37
+
+export default (_0x116fd4, _0x591055, _0xdbfa37) => {
+                'use strict';
+                const _0x4a9631 = a0_0x6932;
+                var _0x2c76f5 = this && this['__importDefault'] || function(_0x4d2c87) {
+                    return _0x4d2c87 && _0x4d2c87['__esModule'] ? _0x4d2c87 : {
+                        'default': _0x4d2c87
+                    };
+                };
+                Object['defineProperty'](_0x591055, '__esModule', {
+                    'value': !0x0
+                });
+                const _0x4cca22 = _0x2c76f5(_0xdbfa37(0x5f07)),
+                    _0x163b95 = _0x2c76f5(_0xdbfa37(0x166d5)),
+                    _0x11a359 = _0x2c76f5(_0xdbfa37(0xc42e)),
+                    _0x3d6192 = _0x2c76f5(_0xdbfa37(0x1fd7)),
+                    _0x2154cf = _0x2c76f5(_0xdbfa37(0x5103));
+                class _0xa6f815 extends _0x163b95['default'] {
+                    constructor(_0x4a1b7e, _0x1664b7, _0x34deab, _0x3eb7be = _0x11a359['default']['COINBAG1']) {
+                        const _0x139cad = _0x4a9631;
+                        super(_0x4a1b7e, _0x1664b7, _0x34deab, _0x3eb7be), _0x4cca22[_0x139cad(0xd2c)]['Core'][_0x139cad(0x6d2)][_0x139cad(0x18bd)]['existing'](this), this[_0x139cad(0x8a2)](_0x2154cf['default'][_0x139cad(0x15db)]);
+                    } ['Update']() {
+                        const _0x4e6813 = _0x4a9631;
+                        super[_0x4e6813(0xa9f)](), this[_0x4e6813(0xb4a)](0x9 + this['y'] - _0x4cca22[_0x4e6813(0xd2c)][_0x4e6813(0x1043)][_0x4e6813(0x10f6)]['y']);
+                    } ['GetTaken']() {
+                        const _0x3576ab = _0x4a9631;
+                        this['disableGet'] || (_0x4cca22[_0x3576ab(0xd2c)][_0x3576ab(0x1043)][_0x3576ab(0x15c9)][_0x3576ab(0x1786)](this), _0x4cca22[_0x3576ab(0xd2c)][_0x3576ab(0x1043)]['CoinPickedup'](this), _0x4cca22['default'][_0x3576ab(0x1043)][_0x3576ab(0x14d8)][_0x3576ab(0x17b2)](this[_0x3576ab(0xb81)]), _0x4cca22['default']['Core']['PlayerOptions']['RunPickups'][_0x3576ab(0x1564)](this[_0x3576ab(0xeb5)]), _0x4cca22[_0x3576ab(0xd2c)][_0x3576ab(0x1043)][_0x3576ab(0x1273)][_0x3576ab(0x631)](), _0x4cca22['default'][_0x3576ab(0x1267)][_0x3576ab(0x7f6)](_0x3d6192['default'][_0x3576ab(0x10cf)], {
+                            'volume': 0.5
+                        }), this[_0x3576ab(0x102c)](this['itemType']), super[_0x3576ab(0x437)]());
+                    }
+                }
+                _0x591055['default'] = _0xa6f815;
+            };

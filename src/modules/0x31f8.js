@@ -1,0 +1,92 @@
+// Module 0x31f8
+// Args: _0x1a2a65, _0x2e0d1f, _0x32fe1d
+
+export default (_0x1a2a65, _0x2e0d1f, _0x32fe1d) => {
+                'use strict';
+                const _0x479937 = a0_0x6932;
+                var _0x190732 = this && this['__importDefault'] || function(_0x538b14) {
+                    const _0x379cb9 = _0x479937;
+                    return _0x538b14 && _0x538b14[_0x379cb9(0x16f1)] ? _0x538b14 : {
+                        'default': _0x538b14
+                    };
+                };
+                Object['defineProperty'](_0x2e0d1f, '__esModule', {
+                    'value': !0x0
+                }), _0x2e0d1f['B_Pentagram'] = void 0x0;
+                const _0x3f0e4c = _0x190732(_0x32fe1d(0xa14d)),
+                    _0x4a901e = _0x190732(_0x32fe1d(0x5f07)),
+                    _0x3e7071 = _0x190732(_0x32fe1d(0x136b9)),
+                    _0x4da2db = _0x190732(_0x32fe1d(0x1fd7)),
+                    _0x4244c4 = _0x190732(_0x32fe1d(0x54e3));
+                class _0x1df6e2 extends _0x3f0e4c['default'] {
+                    constructor(_0x229892, _0x20e25b, _0x5d704d, _0x1b4a13, _0xcb32cc) {
+                        const _0x557222 = _0x479937;
+                        super(_0x229892, _0x20e25b, _0x5d704d, 'vfx', 'Rings3.png', _0x1b4a13, _0xcb32cc), this[_0x557222(0xf01)](_0x4a901e['default'][_0x557222(0x1043)][_0x557222(0x10f6)]), this[_0x557222(0x1234)] = this['weapon'], this[_0x557222(0x35a)] = !0x1, this['canvas'] = this[_0x557222(0x1234)][_0x557222(0x118c)], this['rt'] = this['trueWeapon']['rt'], this[_0x557222(0x1aa0)] = 0.8 * Math[_0x557222(0x1084)](this[_0x557222(0x6d2)]['renderer'][_0x557222(0x173c)], this[_0x557222(0x6d2)]['renderer'][_0x557222(0x140e)]), this[_0x557222(0x1234)]['outline'][_0x557222(0x652)](0xffffff, 0xffff00, 0xffff00, 0xffffff), this['trueWeapon']['outer'][_0x557222(0x652)](0xffffff, 0xffff00, 0xffff00, 0xffffff), this[_0x557222(0x1234)][_0x557222(0xcdb)][_0x557222(0x652)](0xffffff, 0xffff00, 0xffff00, 0xffffff), this[_0x557222(0x1234)]['center']['setTintFill'](0xffffff, 0xffff00, 0xffff00, 0xffffff);
+                    } ['OnRecycle']() {
+                        const _0x4c32b1 = _0x479937;
+                        super[_0x4c32b1(0x5ce)](), this[_0x4c32b1(0xcf9)][_0x4c32b1(0x543)] = !0x1, this[_0x4c32b1(0x1234)]['rt'][_0x4c32b1(0x159)](), this[_0x4c32b1(0x1234)][_0x4c32b1(0x163c)][_0x4c32b1(0x8a2)](this[_0x4c32b1(0x1aa0)] / 0x80), this['trueWeapon'][_0x4c32b1(0xcdb)]['setScale'](this[_0x4c32b1(0x1aa0)] / 0x80), this['trueWeapon']['outer']['setScale'](this[_0x4c32b1(0x1aa0)] / 0x80), this[_0x4c32b1(0x1234)][_0x4c32b1(0x995)][_0x4c32b1(0x8a2)](this['globalScale'] / 0x80), this[_0x4c32b1(0x1234)][_0x4c32b1(0x101a)][_0x4c32b1(0x8a2)](this['globalScale'] / 0x10), this[_0x4c32b1(0x1234)][_0x4c32b1(0x594)][_0x4c32b1(0x8a2)](this['globalScale'] / 0x10);
+                        let _0x14c3cb = Math['random']() * (0x1 / _0x4a901e[_0x4c32b1(0xd2c)]['Core'][_0x4c32b1(0x10f6)][_0x4c32b1(0x17b9)]) > this['trueWeapon']['chance'];
+                        this['scene']['time'][_0x4c32b1(0x12b8)]({
+                            'delay': 0x64,
+                            'callback': () => {
+                                const _0x2e5bb5 = _0x4c32b1;
+                                this[_0x2e5bb5(0x28b)](_0x14c3cb), _0x14c3cb && this['EraseItems']();
+                            }
+                        }), _0x14c3cb ? this['rt'][_0x4c32b1(0x4a6)](this[_0x4c32b1(0x1234)][_0x4c32b1(0x101a)]) : this['rt']['draw'](this['trueWeapon'][_0x4c32b1(0x594)]), this['rt'][_0x4c32b1(0x4a6)](this['trueWeapon'][_0x4c32b1(0x163c)]), this['rt'][_0x4c32b1(0x4a6)](this[_0x4c32b1(0x1234)][_0x4c32b1(0xae0)]), this['rt'][_0x4c32b1(0x4a6)](this[_0x4c32b1(0x1234)][_0x4c32b1(0xcdb)]), this['rt']['draw'](this[_0x4c32b1(0x1234)][_0x4c32b1(0x995)]), this[_0x4c32b1(0x118c)]['copyPosition'](_0x4a901e[_0x4c32b1(0xd2c)][_0x4c32b1(0x1043)]['Player']), this['Shatter'](), _0x4a901e[_0x4c32b1(0xd2c)]['Sound'][_0x4c32b1(0x7f6)](_0x4da2db[_0x4c32b1(0xd2c)][_0x4c32b1(0xe18)], {
+                            'volume': 0.9,
+                            'rate': 0x2
+                        });
+                    } ['EraseEnemies'](_0x25050b = !0x1) {
+                        const _0x5270a1 = _0x479937;
+                        for (let _0x1f392d = 0x0; _0x1f392d < _0x4a901e['default']['Core']['Enemies']['length']; _0x1f392d++) {
+                            const _0x343907 = _0x4a901e['default']['Core']['Enemies'][_0x1f392d];
+                            _0x343907[_0x5270a1(0x1935)] || _0x4a901e['default'][_0x5270a1(0x1043)]['containmentRect_Screen'][_0x5270a1(0x185)](_0x343907) && (_0x25050b ? _0x343907[_0x5270a1(0xe00)]() : _0x343907[_0x5270a1(0x1112)](Math[_0x5270a1(0x1981)](0x42, _0x343907['maxHp']), _0x3e7071[_0x5270a1(0xd2c)][_0x5270a1(0xa8c)], 0x0, _0x4244c4[_0x5270a1(0xd2c)][_0x5270a1(0xaa6)]), this[_0x5270a1(0x4a1)][_0x5270a1(0xb3d)] += _0x343907[_0x5270a1(0xd2e)]);
+                        }
+                    } ['EraseItems']() {
+                        const _0x2b31ff = _0x479937;
+                        let _0x576818 = _0x4a901e['default'][_0x2b31ff(0x1043)][_0x2b31ff(0x1554)];
+                        for (let _0x5086d6 = _0x4a901e[_0x2b31ff(0xd2c)][_0x2b31ff(0x1043)]['PickupGroup']['children']['entries'][_0x2b31ff(0xed9)] - 0x1; _0x5086d6 > 0x0; _0x5086d6--) {
+                            const _0x4373a2 = _0x4a901e[_0x2b31ff(0xd2c)][_0x2b31ff(0x1043)][_0x2b31ff(0x13b2)][_0x2b31ff(0x3fe)]['entries'][_0x5086d6];
+                            _0x576818[_0x2b31ff(0x185)](_0x4373a2) && (_0x4373a2['res_Rosary'] || _0x4373a2['DeSpawn']());
+                        }
+                        for (let _0xd4f025 = _0x4a901e['default'][_0x2b31ff(0x1043)]['Destructibles']['length'] - 0x1; _0xd4f025 >= 0x0; _0xd4f025--) {
+                            const _0x17aea2 = _0x4a901e[_0x2b31ff(0xd2c)][_0x2b31ff(0x1043)]['Destructibles'][_0xd4f025];
+                            _0x576818[_0x2b31ff(0x185)](_0x17aea2) && _0x17aea2[_0x2b31ff(0x14fb)]();
+                        }
+                    } ['Update']() {
+                        const _0x12edc0 = _0x479937;
+                        this[_0x12edc0(0x118c)][_0x12edc0(0xf01)](_0x4a901e[_0x12edc0(0xd2c)][_0x12edc0(0x1043)][_0x12edc0(0x10f6)]);
+                    } ['Shatter']() {
+                        const _0x32f9d5 = _0x479937;
+                        let _0x10bce7 = this['canvas'];
+                        _0x10bce7['task'] && (_0x10bce7[_0x32f9d5(0x1d9)]['stop'](), _0x10bce7['task'] = null), _0x10bce7[_0x32f9d5(0x1705)](), this[_0x32f9d5(0x6d2)][_0x32f9d5(0x12f9)][_0x32f9d5(0x173c)], _0x10bce7[_0x32f9d5(0x1d9)] = this[_0x32f9d5(0x6d2)]['tweens']['add']({
+                            'targets': _0x10bce7['faces'],
+                            'alpha': 0x0,
+                            'angle': function() {
+                                const _0x2f8c8f = _0x32f9d5;
+                                return 0xb4 * Math[_0x2f8c8f(0x9ad)]() - 0x5a;
+                            },
+                            'x': function() {
+                                return 1.2 * (Math['random']() - 0.5);
+                            },
+                            'y': function() {
+                                const _0x4d85c6 = _0x32f9d5;
+                                return 1.2 * (Math[_0x4d85c6(0x9ad)]() - 0.5);
+                            },
+                            'ease': 'Linear',
+                            'duration': 0x3e8,
+                            'delay': 0x96,
+                            'repeat': 0x0,
+                            'yoyo': !0x1,
+                            'onComplete': () => {
+                                const _0x56baf2 = _0x32f9d5;
+                                _0x10bce7[_0x56baf2(0x1a6c)](), this['DeSpawn']();
+                            }
+                        }), _0x10bce7[_0x32f9d5(0x1a21)]();
+                    } ['Init'](_0x5acb48 = -0x3e8, _0x42dd5b = -0x3e8) {
+                        const _0x313855 = _0x479937;
+                        this[_0x313855(0x726)](_0x5acb48, _0x42dd5b), this[_0x313855(0x6d2)]['physics'][_0x313855(0x18bd)]['existing'](this);
+                    }
+                }
+                _0x2e0d1f['B_Pentagram'] = _0x1df6e2, _0x2e0d1f['default'] = _0x1df6e2;
+            };

@@ -1,0 +1,73 @@
+// Module 0x182a2
+// Args: _0x231403, _0x28638c, _0x7993af
+
+export default (_0x231403, _0x28638c, _0x7993af) => {
+                'use strict';
+                const _0x4c0134 = a0_0x6932;
+                var _0x574f71 = this && this['__importDefault'] || function(_0x8adcb9) {
+                    const _0x58aa46 = a0_0x6932;
+                    return _0x8adcb9 && _0x8adcb9['__esModule'] ? _0x8adcb9 : {
+                        'default': _0x8adcb9
+                    };
+                };
+                Object['defineProperty'](_0x28638c, '__esModule', {
+                    'value': !0x0
+                }), _0x28638c['W_Carnage'] = void 0x0;
+                const _0x40aa71 = _0x574f71(_0x7993af(0x9b68)),
+                    _0x524d46 = _0x574f71(_0x7993af(0x1fd7)),
+                    _0x3aa3c8 = _0x574f71(_0x7993af(0x54e3)),
+                    _0x40d6d6 = _0x574f71(_0x7993af(0x5f07)),
+                    _0x5e03d6 = _0x574f71(_0x7993af(0x4a9d)),
+                    _0x3facee = _0x574f71(_0x7993af(0xe49a));
+                class _0xb1684a extends _0x3facee['default'] {
+                    constructor(_0x1c6f6a) {
+                        const _0x53fe2f = _0x4c0134;
+                        super(_0x1c6f6a), this['exploIndex'] = 0x0, this[_0x53fe2f(0x36d)] = !0x0, this[_0x53fe2f(0x1007)] = !0x1, this['explosionType'] = _0x3aa3c8['default'][_0x53fe2f(0x3e7)], this[_0x53fe2f(0x1af)] = this['ExplodeOnPlayer']['bind'](this), _0x40d6d6[_0x53fe2f(0xd2c)]['Core'][_0x53fe2f(0x6d2)][_0x53fe2f(0xdc4)]['addListener']('Player_ReceivedDamage', this[_0x53fe2f(0x1af)]), _0x40d6d6[_0x53fe2f(0xd2c)][_0x53fe2f(0x1043)]['scene']['events'][_0x53fe2f(0x1299)]('Player_LostShield', this[_0x53fe2f(0x1af)]), this[_0x53fe2f(0x1a0)] = 0x0, this['canExplode'] = !0x0;
+                    } ['CheckArcanas']() {
+                        const _0x509c4 = _0x4c0134;
+                        _0x40d6d6[_0x509c4(0xd2c)]['Core']['Arcanas'][_0x509c4(0x15e7)][_0x509c4(0x1303)](_0x40aa71['default']['T14_JEWELS']) > -0x1 && (this['freezeChance'] = 0.25), super[_0x509c4(0x1ce)]();
+                    } ['ExplodeOnPlayer']() {
+                        const _0x20b66c = _0x4c0134;
+                        this[_0x20b66c(0x36d)] && (this[_0x20b66c(0x36d)] = !0x1, _0x40d6d6[_0x20b66c(0xd2c)][_0x20b66c(0x1043)]['scene'][_0x20b66c(0x915)]['removeEvent'](this[_0x20b66c(0x179b)]), this['ExplodeTimer'] = _0x40d6d6[_0x20b66c(0xd2c)][_0x20b66c(0x1043)][_0x20b66c(0x6d2)][_0x20b66c(0x915)][_0x20b66c(0x12b8)]({
+                            'delay': 0x1f4,
+                            'callback': () => {
+                                const _0x55e91d = _0x20b66c;
+                                this[_0x55e91d(0x36d)] = !0x0;
+                            }
+                        }), this[_0x20b66c(0x417)]['SpawnAt'](_0x40d6d6['default'][_0x20b66c(0x1043)][_0x20b66c(0x10f6)]['x'], _0x40d6d6[_0x20b66c(0xd2c)]['Core']['Player']['y'], this, 0x0), this['exploIndex']++, _0x40d6d6[_0x20b66c(0xd2c)]['Sound']['PlaySound'](_0x524d46['default'][_0x20b66c(0x797)], {
+                            'detune': this[_0x20b66c(0x1a0)] % 0x2 == 0x0 ? 0x3e8 : -0x3e8,
+                            'volume': 0.5
+                        }, 0xc8, 0xa), _0x40d6d6[_0x20b66c(0xd2c)][_0x20b66c(0x1267)][_0x20b66c(0x7f6)](_0x524d46['default']['ExploGH2'], {
+                            'detune': this['exploIndex'] % 0x2 == 0x0 ? 0x3e8 : -0x3e8,
+                            'volume': 0.5
+                        }, 0xc8, 0xa), _0x40d6d6['default']['Sound']['PlaySound'](_0x524d46[_0x20b66c(0xd2c)][_0x20b66c(0x136d)], {
+                            'detune': this[_0x20b66c(0x1a0)] % 0x2 == 0x0 ? 0x384 : -0x384,
+                            'volume': 0.5
+                        }, 0xc8, 0xa));
+                    } ['Fire']() {
+                        const _0x51e5b1 = _0x4c0134;
+                        this['target'] = Phaser['Math'][_0x51e5b1(0x82a)]['pick'](_0x40d6d6['default'][_0x51e5b1(0x1043)][_0x51e5b1(0x1a91)]), super['Fire']();
+                    } ['ActiveBulletCount']() {
+                        const _0x4f2682 = _0x4c0134;
+                        let _0x1d0b8c = this[_0x4f2682(0xc82)] ? this['pool']['countActive'](!0x0) : 0x0;
+                        return _0x1d0b8c += this['TVexplosionPool'] ? this['TVexplosionPool'][_0x4f2682(0x10b8)](!0x0) : 0x0, _0x1d0b8c;
+                    } ['CleanUp']() {
+                        const _0x416b90 = _0x4c0134;
+                        var _0x1d16c3, _0x4f0a10, _0x316e63, _0x54bc86;
+                        this[_0x416b90(0x19b7)] && this[_0x416b90(0x19b7)]['destroy'](), null === (_0x1d16c3 = this[_0x416b90(0xc82)]) || void 0x0 === _0x1d16c3 || _0x1d16c3['spawned']['forEach'](_0x4464ab => {
+                            const _0x505d7a = _0x416b90;
+                            _0x4464ab[_0x505d7a(0x14fb)]();
+                        }), null === (_0x4f0a10 = this['secondaryPool']) || void 0x0 === _0x4f0a10 || _0x4f0a10[_0x416b90(0x13f4)][_0x416b90(0x858)](_0x58a9d0 => {
+                            _0x58a9d0['DeSpawn']();
+                        }), null === (_0x316e63 = this[_0x416b90(0x176b)]) || void 0x0 === _0x316e63 || _0x316e63[_0x416b90(0x13f4)][_0x416b90(0x858)](_0x4f41fe => {
+                            _0x4f41fe['DeSpawn']();
+                        }), null === (_0x54bc86 = this['OnGetHitExplosionPool']) || void 0x0 === _0x54bc86 || _0x54bc86[_0x416b90(0x13f4)]['forEach'](_0x278438 => {
+                            _0x278438['DeSpawn']();
+                        }), _0x40d6d6[_0x416b90(0xd2c)][_0x416b90(0x1043)]['scene'][_0x416b90(0xdc4)]['removeListener']('Player_ReceivedDamage', this['explodeEvent']), _0x40d6d6[_0x416b90(0xd2c)]['Core'][_0x416b90(0x6d2)][_0x416b90(0xdc4)]['removeListener']('Player_LostShield', this[_0x416b90(0x1af)]);
+                    } ['OnStart']() {
+                        const _0x553a1f = _0x4c0134;
+                        super[_0x553a1f(0xec7)](), this['TVexplosionPool'] = new _0x5e03d6['default'](_0x40d6d6[_0x553a1f(0xd2c)][_0x553a1f(0x1043)]['scene'], _0x3aa3c8[_0x553a1f(0xd2c)][_0x553a1f(0x15f5)]), this[_0x553a1f(0x417)] = new _0x5e03d6['default'](_0x40d6d6['default']['Core']['scene'], _0x3aa3c8[_0x553a1f(0xd2c)][_0x553a1f(0x15f5)]), _0x40d6d6['default']['Core'][_0x553a1f(0x6d2)][_0x553a1f(0x1585)][_0x553a1f(0x18bd)][_0x553a1f(0x13d7)](this[_0x553a1f(0x176b)], _0x40d6d6['default']['Core'][_0x553a1f(0x1a91)], this[_0x553a1f(0xd06)]['bind'](this)), _0x40d6d6[_0x553a1f(0xd2c)]['Core'][_0x553a1f(0x6d2)][_0x553a1f(0x1585)]['add'][_0x553a1f(0x13d7)](this[_0x553a1f(0x176b)], _0x40d6d6['default'][_0x553a1f(0x1043)][_0x553a1f(0xa08)], this[_0x553a1f(0x823)][_0x553a1f(0xf7e)](this)), _0x40d6d6[_0x553a1f(0xd2c)]['Core'][_0x553a1f(0x6d2)][_0x553a1f(0x1585)][_0x553a1f(0x18bd)]['overlap'](this['OnGetHitExplosionPool'], _0x40d6d6['default'][_0x553a1f(0x1043)][_0x553a1f(0x1a91)], this['onBulletOverlapsEnemy_Retaliation'][_0x553a1f(0xf7e)](this)), _0x40d6d6[_0x553a1f(0xd2c)][_0x553a1f(0x1043)][_0x553a1f(0x6d2)][_0x553a1f(0x1585)][_0x553a1f(0x18bd)]['overlap'](this[_0x553a1f(0x417)], _0x40d6d6[_0x553a1f(0xd2c)]['Core']['Destructibles'], this['onBulletOverlapsDestuctible']['bind'](this));
+                    }
+                }
+                _0x28638c['W_Carnage'] = _0xb1684a, _0x28638c['default'] = _0xb1684a;
+            };
