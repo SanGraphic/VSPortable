@@ -6,7 +6,6 @@
 #include <gsKit.h>
 #include <dmaKit.h>
 #include <gsToolkit.h>
-#include <fileio.h>
 #include <loadfile.h>
 
 extern "C" {
@@ -84,13 +83,9 @@ char* load_file_from_cd(const char* filepath) {
 }
 
 int main(int argc, char *argv[]) {
-    // Reset IOP and wait for it to be ready
-    SifInitRpc(0);
-    while(!SifIopReset(NULL, 0));
-    while(!SifIopSync());
+    // Basic RPC Init
     SifInitRpc(0);
     SifLoadFileInit();
-    fioInit();
 
     // Initialize gsKit
     gsGlobal = gsKit_init_global();
@@ -101,12 +96,12 @@ int main(int argc, char *argv[]) {
 
     // Initialize Font
     gsFontM = gsKit_init_fontm();
-    gsKit_fontm_unpack(gsGlobal, gsFontM);
+    gsKit_fontm_unpack(gsFontM);
     gsFontM->Spacing = 0.8f;
 
     auto print_status = [&](const char* msg) {
         gsKit_clear(gsGlobal, GS_SETREG_RGBAQ(0x00,0x00,0x20,0x00,0x00));
-        gsKit_fontm_print_scaled(gsGlobal, gsFontM, 50, 400, 1, 0.7f, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
+        gsKit_fontm_print(gsGlobal, gsFontM, 50, 400, 1, GS_SETREG_RGBAQ(0xFF,0xFF,0xFF,0x80,0x00), msg);
         gsKit_queue_exec(gsGlobal);
         gsKit_sync_flip(gsGlobal);
         printf("%s\n", msg);
