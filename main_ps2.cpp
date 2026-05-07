@@ -209,28 +209,35 @@ int main(int argc, char *argv[]) {
     print_status("Ready", GS_SETREG_RGBAQ(0x00, 0x00, 0x00, 0x00, 0x00));
 
     // Main Engine Loop
+    int frame_counter = 0;
     while (1) {
         JSContext *ctx1;
         int err;
 
+        // Run pending jobs (RAF, Timeouts, Promises)
         for (;;) {
             err = JS_ExecutePendingJob(rt, &ctx1);
             if (err <= 0) {
                 if (err < 0) {
                     JSValue exception_val = JS_GetException(ctx1);
-                    const char *str = JS_ToCString(ctx1, exception_val);
-                    if (str) {
-                        char err_buf[512];
-                        snprintf(err_buf, sizeof(err_buf), "Exception: %s", str);
-                        print_status(err_buf);
-                        JS_FreeCString(ctx1, str);
-                    }
+                    print_status("JS Runtime Exception!", GS_SETREG_RGBAQ(0xFF, 0x00, 0x00, 0x00, 0x00));
                     JS_FreeValue(ctx1, exception_val);
                     while(1);
                 }
                 break;
             }
         }
+
+        // Periodic GC every 60 "ticks"
+        if (++frame_counter >= 60) {
+            JS_RunGC(rt);
+            frame_counter = 0;
+        }
+
+        // Small hardware sync to prevent CPU/GPU hammering
+        // This also gives the SIF/IOP time to process audio/pad
+        // gsKit_sync_flip is usually enough if RAF is calling it,
+        // but if the game hangs in a JS loop, this helps.
     }
 
     JS_FreeContext(ctx);

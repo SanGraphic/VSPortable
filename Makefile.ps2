@@ -6,7 +6,7 @@ EE_OBJS = main_ps2.o quickjs/quickjs.o quickjs/libregexp.o quickjs/libunicode.o 
 EE_CFLAGS += -I. -I./quickjs -DCONFIG_VERSION=\"2021-03-27\" -DEMSCRIPTEN -include quickjs_ps2_shim.h -Wno-format -Wno-implicit-function-declaration -Wno-error=incompatible-pointer-types -Wno-error=int-conversion
 EE_CXXFLAGS += -I. -I./quickjs -DCONFIG_VERSION=\"2021-03-27\" -DEMSCRIPTEN -include quickjs_ps2_shim.h -Wno-format -fpermissive
 EE_INCS += -I$(GSKIT)/include -I$(GSKIT)/common/include
-EE_LDFLAGS += -L$(GSKIT)/lib
+EE_LDFLAGS += -L$(GSKIT)/lib -Wl,--defsym,_stack_size=0x100000
 EE_LIBS = -lgskit -ldmakit -ldebug -lpad -lm
 
 all: $(EE_BIN)
