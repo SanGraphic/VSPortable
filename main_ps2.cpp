@@ -98,7 +98,7 @@ char* load_file_from_cd(const char* filepath) {
     return string;
 }
 
-static char status_buf[256];
+
 
 int main(int argc, char *argv[]) {
     // Basic RPC Init
