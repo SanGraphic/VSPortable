@@ -7,7 +7,7 @@ EE_CFLAGS += -I. -I./quickjs -DCONFIG_VERSION=\"2021-03-27\" -DEMSCRIPTEN -inclu
 EE_CXXFLAGS += -I. -I./quickjs -DCONFIG_VERSION=\"2021-03-27\" -DEMSCRIPTEN -include quickjs_ps2_shim.h -Wno-format -fpermissive
 EE_INCS += -I$(GSKIT)/include -I$(GSKIT)/common/include
 EE_LDFLAGS += -L$(GSKIT)/lib
-EE_LIBS = -lgskit -ldmakit -ldebug -lm
+EE_LIBS = -lgskit -ldmakit -ldebug -lpad -lm
 
 all: $(EE_BIN)
 

@@ -7,6 +7,7 @@
 #include <dmaKit.h>
 #include <gsToolkit.h>
 #include <loadfile.h>
+#include <libpad.h>
 
 extern "C" {
     size_t malloc_usable_size(void* ptr) { return 0; }
@@ -45,6 +46,19 @@ static JSValue js_native_draw(JSContext *ctx, JSValueConst this_val, int argc, J
 
     JS_FreeCString(ctx, cmd);
     return JS_UNDEFINED;
+}
+
+// Pad Globals
+static char padBuf[256] __attribute__((aligned(64)));
+struct padButtonStatus buttons;
+uint32_t paddata;
+uint32_t old_pad = 0;
+
+// Native Binding: __get_pad_state()
+static JSValue js_native_get_pad_state(JSContext *ctx, JSValueConst this_val, int argc, JSValueConst *argv) {
+    padRead(0, 0, &buttons);
+    paddata = 0xffff ^ buttons.btns;
+    return JS_NewInt32(ctx, paddata);
 }
 
 // Native Binding: console.log
@@ -94,6 +108,10 @@ int main(int argc, char *argv[]) {
     // Basic RPC Init
     SifInitRpc(0);
     SifLoadFileInit();
+    
+    // Load Pad Module
+    SifLoadModule("rom0:SIO2MAN", 0, NULL);
+    SifLoadModule("rom0:PADMAN", 0, NULL);
 
     // Initialize gsKit
     gsGlobal = gsKit_init_global();
@@ -101,6 +119,10 @@ int main(int argc, char *argv[]) {
     dmaKit_init(D_CTRL_RELE_OFF, D_CTRL_MFD_OFF, D_CTRL_STS_UNSPEC, D_CTRL_STD_OFF, D_CTRL_RCYC_8, 1 << DMA_CHANNEL_GIF);
     dmaKit_chan_init(DMA_CHANNEL_GIF);
     gsKit_init_screen(gsGlobal);
+
+    // Initialize Pad
+    padInit(0);
+    padPortOpen(0, 0, padBuf);
 
     // Initialize Font
     gsFontM = gsKit_init_fontm();
@@ -118,6 +140,7 @@ int main(int argc, char *argv[]) {
     // Bind Native Functions
     JSValue global_obj = JS_GetGlobalObject(ctx);
     JS_SetPropertyStr(ctx, global_obj, "__draw", JS_NewCFunction(ctx, js_native_draw, "__draw", 1));
+    JS_SetPropertyStr(ctx, global_obj, "__get_pad_state", JS_NewCFunction(ctx, js_native_get_pad_state, "__get_pad_state", 0));
     
     // Bind console
     JSValue console = JS_NewObject(ctx);
