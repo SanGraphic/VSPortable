@@ -15,7 +15,8 @@ jobs:
 
       - name: Install Build Tools
         run: |
-          apk add make build-base cdrkit || (apt-get update && apt-get install -y make build-essential genisoimage)
+          apk add make build-base git cmake || true
+          apt-get update && apt-get install -y make build-essential git cmake 2>/dev/null || true
 
       - name: Build PS2 ELF
         run: |
@@ -23,21 +24,24 @@ jobs:
           mkdir -p dist_ps2
           cp vsport_ps2.elf dist_ps2/VSPORT.ELF
 
-      - name: Assemble ISO contents
+      - name: Assemble disc contents
         run: |
           cp .webpack/renderer/vendors.bundle.beautified.js dist_ps2/VENDORS.JS
           cp .webpack/renderer/main.bundle.beautified.js dist_ps2/MAIN.JS
-          printf 'BOOT2 = cdrom0:\\VSPORT.ELF;1\nVER = 1.00\nVMODE = NTSC\n' > dist_ps2/SYSTEM.CNF
+          # PS2 BIOS requires CRLF line endings in SYSTEM.CNF
+          printf 'BOOT2 = cdrom0:\\VSPORT.ELF;1\r\nVER = 1.00\r\nVMODE = NTSC\r\n' > dist_ps2/SYSTEM.CNF
 
-      - name: Build ISO
+      - name: Build mkps2iso
         run: |
-          genisoimage -o vsport_ps2.iso \
-            -R -J \
-            -V "VSPORT" \
-            -publisher "VSport" \
-            -input-charset iso8859-1 \
-            -iso-level 3 \
-            dist_ps2/
+          git clone --depth=1 https://github.com/Lameguy64/mkpsxiso.git /tmp/mkpsxiso
+          cd /tmp/mkpsxiso
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          cmake --build build --parallel
+          cp build/mkpsxiso /usr/local/bin/mkps2iso || cp build/bin/mkpsxiso /usr/local/bin/mkps2iso
+
+      - name: Build ISO with mkps2iso
+        run: |
+          mkps2iso vsport.xml
 
       - name: Upload ISO
         uses: actions/upload-artifact@v4

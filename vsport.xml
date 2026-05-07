@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iso_project image_name="vsport_ps2.iso" iso_type="dvd">
+    <track type="data">
+        <!-- SYSTEM.CNF MUST be first - PS2 BIOS reads this from the first sectors -->
+        <file name="SYSTEM.CNF" source="dist_ps2/SYSTEM.CNF" />
+        <!-- Main executable -->
+        <file name="VSPORT.ELF" source="dist_ps2/VSPORT.ELF" />
+        <!-- Game data -->
+        <file name="VENDORS.JS" source="dist_ps2/VENDORS.JS" />
+        <file name="MAIN.JS" source="dist_ps2/MAIN.JS" />
+    </track>
+</iso_project>
