@@ -13,7 +13,6 @@ extern "C" {
 
 // QuickJS Library
 #include "quickjs/quickjs.h"
-#include "quickjs/quickjs-libc.h"
 
 // Globals
 GSGLOBAL *gsGlobal;
