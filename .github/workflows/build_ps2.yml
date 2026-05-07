@@ -33,10 +33,10 @@ jobs:
           dd if=/dev/zero of=dist_ps2/DUMMY.DAT bs=1M count=20
           # PS2 BIOS requires CRLF line endings in SYSTEM.CNF
           cat > dist_ps2/SYSTEM.CNF << 'EOF'
-BOOT2 = cdrom0:\VSPORT.ELF;1
-VER = 1.00
-VMODE = NTSC
-EOF
+          BOOT2 = cdrom0:\VSPORT.ELF;1
+          VER = 1.00
+          VMODE = NTSC
+          EOF
           # Force CRLF line endings for BIOS compatibility
           sed -i 's/$/\r/' dist_ps2/SYSTEM.CNF
 
